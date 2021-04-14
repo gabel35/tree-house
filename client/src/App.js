@@ -3,6 +3,8 @@ import {Switch, BrowserRouter, Route} from 'react-router-dom';
 import Home from './pages/Home/index';
 import Login from './pages/Login/index';
 import SignUp from './pages/SignUp/index';
+import TreeHouseForum from './pages/TreeHouseForum';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 
 function App() {
@@ -13,7 +15,10 @@ function App() {
           <Login/>
         </Route>
         <Route path='/signup'>
-          <Login/>
+          <SignUp/>
+        </Route>
+        <Route path='/forum'>
+          <TreeHouseForum/>
         </Route>
         <Route path='/'>
           <Home/>
