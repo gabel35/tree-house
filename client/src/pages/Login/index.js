@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import "../../App.css";
+
+import "./style.css";
+
 import LoginForm from '../../components/LoginForm'
 
 function Login() {
