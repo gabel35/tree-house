@@ -9,3 +9,10 @@ h1 {
   font-family:monospace;
   text-align: center;
 }
+.content_box .logo {
+  text-align: center;
+  padding: 20px 0px 50px;
+}
+.content_box .logo img {
+  max-width: 250px;
+}
