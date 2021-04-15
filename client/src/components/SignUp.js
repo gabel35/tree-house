@@ -9,3 +9,9 @@ function SignUp() {
             <div className="form-inner">
                 <h2>Sign Up</h2>
                 {/* {error!} */}
+                <Form.Group>
+                    <Form.Control type="text" name="name" id="name" placeholder="First Name" />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Control type="text" name="name" id="name" placeholder="Last Name" />
+                </Form.Group>
