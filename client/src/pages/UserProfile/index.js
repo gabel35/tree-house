@@ -53,3 +53,12 @@ function AddPost() {
                   </Jumbotron>
                 </Col>
               </Row>
+
+              <Card className="marB">
+                <Card.Header className="d-flex">
+                  Featured
+                  <div className="mlA">
+                    <Badge variant="primary">Edit</Badge>
+                    <Badge variant="danger">Delete</Badge>
+                  </div>
+                </Card.Header>
