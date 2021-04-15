@@ -24,3 +24,7 @@ function SignUpForm() {
                     Already have an account? <Link to="/login"> Sign In </Link>
                     </div>
                 </div>
+            </div>
+        </div>
+    );
+}
