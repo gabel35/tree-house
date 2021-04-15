@@ -31,3 +31,8 @@
 .bgN.btn-primary:hover {
     background-color: transparent;
 }
+
+.mr10 {
+    margin-right: 15px;
+}
+
