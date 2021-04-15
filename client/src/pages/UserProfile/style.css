@@ -15,3 +15,11 @@ h1 {
 .content_box .logo img {
     max-width: 250px;
   }
+.HomeButton {
+    display: flex;
+    margin: 0px -10px;
+  }
+.HomeButton a {
+    width: 33.3333%;
+    padding: 0px 10px;
+  }
