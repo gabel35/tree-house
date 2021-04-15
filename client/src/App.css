@@ -119,3 +119,13 @@ input:focus {
     box-sizing: border-box;
     padding: 50px 0px;
  }
+ .cP {
+    cursor: pointer;
+}
+.mlA {
+    margin-left: auto;
+}
+.mlA .badge {
+   margin-left: 15px;
+   cursor: pointer;
+}
