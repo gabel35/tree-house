@@ -1,10 +1,13 @@
 import React from 'react';
 import {Switch, BrowserRouter, Route} from 'react-router-dom';
+import "bootstrap/dist/css/bootstrap.min.css";
 import Home from './pages/Home/index';
 import Login from './pages/Login/index';
 import SignUp from './pages/SignUp/index';
 import TreeHouseForum from './pages/TreeHouseForum';
-import "bootstrap/dist/css/bootstrap.min.css";
+import AddPost from './pages/AddPost';
+import UserProfile from './pages/UserProfile';
+import "./App.css";
 
 
 function App() {
