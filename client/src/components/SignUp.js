@@ -30,7 +30,7 @@ function SignUp() {
                 <Form.Group>
                     <Form.Control type="password"  name="password" id="password" placeholder="Enter Repeat Password" />
                 </Form.Group>
-                
+
                 <Form.Group>
                     <div className="homepage-btn">
                         <span>
@@ -38,3 +38,7 @@ function SignUp() {
                         </span>
                     </div>
                 </Form.Group>
+            </div>
+        </Form>
+    )
+}
