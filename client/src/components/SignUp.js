@@ -21,3 +21,6 @@ function SignUp() {
                 <Form.Group>
                     <Form.Control type="email" name="email" id="email" placeholder="Enter Email" />
                 </Form.Group>
+                <Form.Group>
+                    <Form.Control as="textarea" rows={3} placeholder="Enter Apartment" />
+                </Form.Group>
