@@ -7,13 +7,25 @@ import Posts from "../../components/PostTemplate";
 
 function TreeHouseForum() {
   return (
-    // navbar on the side className="nav-side"
-
-    <div>
-      <h1>this is a blog for pets</h1>
-
-      <Posts />
+    <>
+    <Header />
+    <div className="Layout">
+      <Container>
+        <Row>
+          <Col xs="12" sm="4" md="4" lg="4">
+            <Posts />
+          </Col>
+          <Col xs="12" sm="4" md="4" lg="4">
+            <Posts />
+          </Col>
+          <Col xs="12" sm="4" md="4" lg="4">
+            <Posts />
+          </Col>
+        </Row>
+      </Container>
     </div>
+    <Footer />
+  </>
   );
 }
 
