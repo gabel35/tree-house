@@ -1,4 +1,6 @@
 import React, { useState} from 'react'
+import { Form } from 'react-bootstrap';
+import './LoginForm.css';
 
 function LoginForm({ Login, error }) {
     const [details, setDetails] = useState({name: "", email: "", password: ""});
