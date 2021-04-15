@@ -109,3 +109,9 @@ input:focus {
     height: 100%;
     flex-flow: wrap;
 }
+.App {
+    max-width: 600px;
+    width: 100%;
+    padding: 50px 15px;
+ }
+ 
