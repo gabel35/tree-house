@@ -7,3 +7,5 @@ import Emails from "../assets/icons/envelope.svg";
 import User from "../assets/icons/User.svg";
 import LeftArrow from "../assets/icons/left-arrow.svg";
 
+const Header = (props) => {
+    return ()
