@@ -12,3 +12,8 @@ import Add from "../../assets/icons/add.svg";
 
 function AddPost() {
     return (
+        <>
+      <Header />
+      <div className="Layout">
+        <Container>
+          <Row></Row>
