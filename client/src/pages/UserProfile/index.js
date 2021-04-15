@@ -10,4 +10,14 @@ import Dollar from "../../assets/icons/dollar-symbol.svg";
 import Birthday from "../../assets/icons/birthday-cake.svg";
 import Profile from "../../assets/images/profile.png";
 
-function AddPost() {}
+function AddPost() {
+    return (
+        <>
+          <Header />
+          <div className="Layout">
+            <Container>
+              <Row>
+                <Col xs="12" sm="4" md="4" lg="4">
+                  <div className="profileimg">
+                    <img src={Profile} width="100%" alt="" />
+                  </div>
