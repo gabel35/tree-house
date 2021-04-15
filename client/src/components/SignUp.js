@@ -42,3 +42,5 @@ function SignUp() {
         </Form>
     )
 }
+
+export default SignUp;
