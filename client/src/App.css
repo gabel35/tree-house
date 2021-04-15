@@ -1,0 +1,144 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+  }
+.bg {
+    animation:slide 3s ease-in-out infinite alternate;
+    /* background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%); */
+    background-image: linear-gradient(-60deg, #feffde 50%, #91c788 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+  
+  .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:4s;
+  }
+  
+  .bg3 {
+    animation-duration:5s;
+  }
+  @keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }
+  .homepage-btn{
+    color: #ffffff;
+    background: #ffffff;
+    border: 1px solid #4fba6f;
+    position: relative;
+    font-size: 16px;
+    letter-spacing: .3em;
+    font-family: 'Montserrat', sans-serif;
+    padding: 15px;
+    transition: .2s ease-in-out;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 3px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .homepage-btn::after{
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 100%;
+    height: 100%;
+    background: #4fba6f;
+    z-index: 1;
+    transition: .25s ease;
+    /* transform: translate(0, 0); */
+    border-radius: 3px;
+  }
+  .homepage-btn:hover::after {
+    /* transform: translate(4px, 4px); */
+    background: #d8ffd9;
+    top: 0px;
+    left: 0px;
+}
+.homepage-btn:hover span,
+.homepage-btn:hover span input {
+    color: #000000;
+}
+.homepage-btn span {
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s;
+    display: block;
+}
+.homepage-btn span input {
+    margin: -15px;
+    margin: -15px 0px;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background: none;
+    color: #ffffff;
+    font-size: 16px;
+}
+input:focus {
+    outline: none;
+}
+.form-control {
+    height: calc(1.5em + 1.7rem + 2px);
+}
+.content_box {
+    background-color: rgba(255,255,255,.9);
+    border-radius: .25em;
+    box-shadow: 0 0 0.25em rgb(0 0 0 / 25%);
+    box-sizing: border-box;
+    padding: 6vmin;
+  }
+#root {
+    height: 100%;
+}
+.Mdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-flow: wrap;
+}
+.App {
+    max-width: 600px;
+    width: 100%;
+    padding: 50px 15px;
+ }
+ .Layout {
+    min-height: calc(100% - 121px);
+    box-sizing: border-box;
+    padding: 50px 0px;
+ }
+ .cP {
+    cursor: pointer;
+}
+.mlA {
+    margin-left: auto;
+}
+.mlA .badge {
+   margin-left: 15px;
+   cursor: pointer;
+}
+
+.loginu {
+    margin-top: 30px;
+}
+.loginu a:hover {
+    text-decoration: none;
+}
+
+@media (min-width: 576px) {
+    .jumbotron {
+        padding: 2rem 2rem;
+    }
+}
