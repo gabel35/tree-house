@@ -24,3 +24,9 @@ function SignUp() {
                 <Form.Group>
                     <Form.Control as="textarea" rows={3} placeholder="Enter Apartment" />
                 </Form.Group>
+                <Form.Group>
+                    <Form.Control type="password"  name="password" id="password" placeholder="Enter Password" />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Control type="password"  name="password" id="password" placeholder="Enter Repeat Password" />
+                </Form.Group>
