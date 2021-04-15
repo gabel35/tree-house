@@ -23,6 +23,12 @@ function App() {
         <Route path='/forum'>
           <TreeHouseForum/>
         </Route>
+        <Route path='/post'>
+          <AddPost/>
+        </Route>
+        <Route path='/profile'>
+          <UserProfile/>
+        </Route>
         <Route path='/'>
           <Home/>
         </Route>
