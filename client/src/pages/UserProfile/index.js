@@ -30,3 +30,10 @@ function AddPost() {
                 <ListGroup.Item><b>Details 3: </b> With supporting text below as a natural lead-in to additional content.</ListGroup.Item>
               </ListGroup>
             </Col>
+            <Col xs="12" sm="8" md="8" lg="8">
+              <Row>
+                <Col xs="6" sm="3" md="3" lg="3">
+                  <Jumbotron className="text-center">
+                    <img src={Customer} width="60" alt="" />
+                  </Jumbotron>
+                </Col>
