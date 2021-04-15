@@ -21,3 +21,12 @@ function AddPost() {
                   <div className="profileimg">
                     <img src={Profile} width="100%" alt="" />
                   </div>
+                <ListGroup variant="flush">
+                <ListGroup.Item><b>Name: </b> Gabriel J. Sanchez</ListGroup.Item>
+                <ListGroup.Item><b>Phone: </b> 123 456 7890</ListGroup.Item>
+                <ListGroup.Item><b>Email: </b> abc@example.com</ListGroup.Item>
+                <ListGroup.Item><b>Details 1: </b> With supporting text below as a natural lead-in to additional content.</ListGroup.Item>
+                <ListGroup.Item><b>Details 2: </b> With supporting text below as a natural lead-in to additional content.</ListGroup.Item>
+                <ListGroup.Item><b>Details 3: </b> With supporting text below as a natural lead-in to additional content.</ListGroup.Item>
+              </ListGroup>
+            </Col>
