@@ -37,3 +37,8 @@ function AddPost() {
                     <img src={Customer} width="60" alt="" />
                   </Jumbotron>
                 </Col>
+                <Col xs="6" sm="3" md="3" lg="3">
+                  <Jumbotron className="text-center">
+                    <img src={Football} width="60" alt="" />
+                  </Jumbotron>
+                </Col>
