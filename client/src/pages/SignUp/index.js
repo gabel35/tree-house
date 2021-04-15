@@ -5,3 +5,4 @@ import SignUp from "../../components/SignUp";
 import '../Home/style.css';
 import Logo from "../../assets/images/logo.png";
 
+function SignUpForm() {
