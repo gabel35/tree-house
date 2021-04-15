@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./style.css";
 import LoginForm from "../../components/LoginForm";
+import '../Home/style.css';
+import Logo from "../../assets/images/logo.png";
 
 function Login() {
   const adminUser = {
