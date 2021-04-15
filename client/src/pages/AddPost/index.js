@@ -16,4 +16,18 @@ function AddPost() {
       <Header />
       <div className="Layout">
         <Container>
-          <Row></Row>
+          <Row>
+            <Col xs="12" sm="3" md="3" lg="3" className="mSb">
+                <Jumbotron className="text-center">
+                <img src={Customer} width="60" alt="Logo" />
+                </Jumbotron>
+                <Jumbotron className="text-center">
+                <img src={Football} width="60" alt="Logo" />
+                </Jumbotron>
+                <Jumbotron className="text-center">
+                <img src={Dollar} width="60" alt="Logo" />
+                </Jumbotron>
+                <Jumbotron className="text-center">
+                <img src={Birthday} width="60" alt="Logo" />
+                </Jumbotron>
+            </Col>
