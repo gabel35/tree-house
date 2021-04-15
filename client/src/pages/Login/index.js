@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-
 import "./style.css";
-
-import LoginForm from '../../components/LoginForm'
+import LoginForm from "../../components/LoginForm";
 
 function Login() {
   const adminUser = {
@@ -16,19 +14,25 @@ function Login() {
   const Login = (details) => {
     console.log(details);
 
-if (details.email == adminUser.email && details.password == adminUser.password){
-  console.log("Logged in");
-  setUser({
-    name: details.name,
-    email: details.email
-  })
- } else {
-    console.log('Details do not match!');
-  }
-}
-  
+    if (
+      details.email == adminUser.email &&
+      details.password == adminUser.password
+    ) {
+      console.log("Logged in");
+      setUser({
+        name: details.name,
+        email: details.email,
+      });
+    } else {
+      console.log("Details do not match!");
+    }
+  };
+
+
+// log out 
+
   const Logout = () => {
-    console.log("Logout");
+    setUser({ name: "", email: "" })
   };
 
   return (
@@ -38,7 +42,7 @@ if (details.email == adminUser.email && details.password == adminUser.password){
           <h2>
             welcome, <span>{user.name}</span>
           </h2>
-          <button>Log out</button>
+          <button onClick={Logout}>Log out</button>
         </div>
       ) : (
         <LoginForm Login={Login} error={error} />

@@ -14,7 +14,7 @@ const submitHandler = e => {
         <div className="form-inner">
             <h2>Login</h2>
             {/* {error!} */}
-            <div className="form-grouo">
+            <div className="form-group">
                 <label htmlFor="name">Name:</label>
                 <input type="text" name="name" id ="name" onChange={e => setDetails({...details, name: e.target.value})} value={details.name} />
                 </div>
