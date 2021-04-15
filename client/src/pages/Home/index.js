@@ -24,8 +24,8 @@ function Home() {
             <Link to="/signup">
               <button className="homepage-btn"><span>Sign Up</span></button>
             </Link>
-            <Link to="/forum">
-              <button className="homepage-btn"><span>Forum</span></button>
+            <Link to="/post">
+              <button className="homepage-btn"><span>Posts</span></button>
             </Link>
           </div>
         </div>

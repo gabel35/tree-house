@@ -63,9 +63,9 @@ function AddPost() {
                   </div>
                 </Card.Header>
                 <Card.Body>
-                  <Card.Title>Post Title</Card.Title>
+                  <Card.Title>Primary Card Title</Card.Title>
                   <Card.Text>
-                    With supporting text below as a natural lead-in to additional content.
+                  Some quick example text to build on the card title and make up the bulk of the card's content.
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -79,9 +79,9 @@ function AddPost() {
                   </div>
                 </Card.Header>
                 <Card.Body>
-                  <Card.Title>Post Title</Card.Title>
+                  <Card.Title>Primary Card Title</Card.Title>
                   <Card.Text>
-                    With supporting text below as a natural lead-in to additional content.
+                  Some quick example text to build on the card title and make up the bulk of the card's content.
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -95,9 +95,9 @@ function AddPost() {
                   </div>
                 </Card.Header>
                 <Card.Body>
-                  <Card.Title>Post Title</Card.Title>
+                  <Card.Title>Primary Card Title</Card.Title>
                   <Card.Text>
-                    With supporting text below as a natural lead-in to additional content.
+                  Some quick example text to build on the card title and make up the bulk of the card's content.
                   </Card.Text>
                 </Card.Body>
               </Card>
