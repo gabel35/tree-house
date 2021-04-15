@@ -62,3 +62,10 @@ function AddPost() {
                     <Badge variant="danger">Delete</Badge>
                   </div>
                 </Card.Header>
+                <Card.Body>
+                  <Card.Title>Post Title</Card.Title>
+                  <Card.Text>
+                    With supporting text below as a natural lead-in to additional content.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
