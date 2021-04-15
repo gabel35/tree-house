@@ -101,3 +101,12 @@ function AddPost() {
                   </Card.Text>
                 </Card.Body>
               </Card>
+
+              </Col>
+          </Row>
+        </Container>
+      </div>
+      <Footer />
+    </>
+  );
+}
