@@ -1,6 +1,9 @@
 import React from "react";
-import Posts from "../../components/Posts";
+import { Container, Row, Col } from 'react-bootstrap';
 import "./style.css";
+import Header from '../../components/Header';
+import Footer from "../../components/Footer";
+import Posts from "../../components/PostTemplate";
 
 function TreeHouseForum() {
   return (
