@@ -13,3 +13,14 @@ function SignUpForm() {
           <div class="bg bg2"></div>
           <div class="bg bg3"></div>
           <div className="App">
+                <div className="logo login">
+                    <Link to="/">
+                    <img src={Logo} alt="Logo" />
+                    </Link>
+                </div>
+                <div className="loginForm content_box">
+                    <SignUp SignUp={SignUp} />
+                    <div className="loginu text-center">
+                    Already have an account? <Link to="/login"> Sign In </Link>
+                    </div>
+                </div>
