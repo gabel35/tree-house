@@ -12,7 +12,7 @@ import Add from "../../assets/icons/add.svg";
 
 function AddPost() {
     return (
-        <>
+    <>
       <Header />
       <div className="Layout">
         <Container>
@@ -31,3 +31,9 @@ function AddPost() {
                 <img src={Birthday} width="60" alt="Logo" />
                 </Jumbotron>
             </Col>
+            <Col xs="12" sm="9" md="9" lg="9">
+              <div className="text-center marB">
+                <span className="cP">
+                  <img src={Add} width="60" alt="Logo" />
+                </span>
+              </div>
