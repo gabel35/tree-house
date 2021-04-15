@@ -5,11 +5,11 @@ import logo from "./logo.png";
 
 function Home() {
   return (
-    <div>
+    <div className="Mdiv">
       <div class="bg"></div>
       <div class="bg bg2"></div>
       <div class="bg bg3"></div>
-      <div class="content">
+      <div className="App">
         <div>
           <h1>WELCOME TO</h1>
           <img src={logo} alt="Logo" />
