@@ -8,4 +8,31 @@ import User from "../assets/icons/User.svg";
 import LeftArrow from "../assets/icons/left-arrow.svg";
 
 const Header = (props) => {
-    return ()
+    return (
+    <div className="Header">
+      <Container>
+        <Row>
+            <Col xs={4}>
+                <div className="d-flex align-items-center">
+                    <Link to="/" className="mr50">
+                        <img src={LeftArrow} width="30" alt="Logo" /> Back
+                    </Link>
+                    <img src={Logo} width="80" alt="Logo" />
+                </div>
+            </Col>
+            <Col xs={8} className="d-flex align-items-center">
+                <div className="ml-auto">
+                    <Button className="bgN" href="mailto:abc@example.com">
+                        <img src={Emails} width="30" alt="Logo" />
+                    </Button>
+                    <Link to="/profile" className="mr10">
+                        <img src={User} width="30" alt="Logo" />
+                    </Link>
+                    <Button variant="info" href="/">Log Out</Button>
+                </div>
+            </Col>
+        </Row>
+        </Container>
+    </div>
+  );
+};
