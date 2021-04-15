@@ -30,4 +30,6 @@ h1 {
   .profileimg img {
    width: 100%;
   }
-  
+.jumbotron {
+    background-color: #4fba6f;
+   }
