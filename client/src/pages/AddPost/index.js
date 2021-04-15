@@ -10,3 +10,5 @@ import Dollar from "../../assets/icons/dollar-symbol.svg";
 import Birthday from "../../assets/icons/birthday-cake.svg";
 import Add from "../../assets/icons/add.svg";
 
+function AddPost() {
+    return (
