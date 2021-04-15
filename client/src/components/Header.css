@@ -34,3 +34,6 @@
     margin-right: 50px;
     color: #000;
 }
+.mr50:hover {
+    text-decoration: none;
+}
