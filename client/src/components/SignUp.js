@@ -15,3 +15,9 @@ function SignUp() {
                 <Form.Group>
                     <Form.Control type="text" name="name" id="name" placeholder="Last Name" />
                 </Form.Group>
+                <Form.Group>
+                    <Form.Control type="phone" name="name" id="name" placeholder="Phone Number" />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Control type="email" name="email" id="email" placeholder="Enter Email" />
+                </Form.Group>
