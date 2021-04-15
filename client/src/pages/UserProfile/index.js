@@ -10,3 +10,4 @@ import Dollar from "../../assets/icons/dollar-symbol.svg";
 import Birthday from "../../assets/icons/birthday-cake.svg";
 import Profile from "../../assets/images/profile.png";
 
+function AddPost() {}
