@@ -23,3 +23,11 @@ h1 {
     width: 33.3333%;
     padding: 0px 10px;
   }
+  .profileimg {
+    margin-bottom: 30px;
+    border: solid 1px #d2d2d2;
+  }
+  .profileimg img {
+   width: 100%;
+  }
+  
