@@ -77,4 +77,11 @@ function AddPost() {
                 </Card.Body>
               </Card>
 
-              
+            </Col>
+          </Row>
+        </Container>
+      </div>
+      <Footer />
+    </>
+  );
+}
