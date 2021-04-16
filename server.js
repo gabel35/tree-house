@@ -37,3 +37,15 @@ app.use(passport.initialize());
  
 app.use(passport.session()); 
 
+// test sql models
+var models = require("./app/models");
+ 
+models.sequelize.sync().then(function() {
+ 
+    console.log('Nice! Database looks fine')
+ 
+}).catch(function(err) {
+ 
+    console.log(err, "Something went wrong with the Database Update!")
+ 
+});
