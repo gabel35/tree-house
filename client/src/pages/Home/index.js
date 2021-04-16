@@ -1,33 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
-import Logo from "../../assets/images/logo.png";
+import logo from "./logo.png";
 
 function Home() {
   return (
-    <div className="Mdiv">
+    <div>
       <div class="bg"></div>
       <div class="bg bg2"></div>
       <div class="bg bg3"></div>
-      <div className="App">
-        <div class="content_box">
+      <div class="content">
         <div>
-        <h1>WELCOME TO</h1>
-            <div className="logo">
-              <img src={Logo} alt="Logo" />
-            </div>
-          </div>
-          <div className="HomeButton">
-            <Link to="/login">
-              <button className="homepage-btn"><span>Log In</span></button>
-            </Link>
-            <Link to="/signup">
-              <button className="homepage-btn"><span>Sign Up</span></button>
-            </Link>
-            <Link to="/post">
-              <button className="homepage-btn"><span>Posts</span></button>
-            </Link>
-          </div>
+          <h1>WELCOME TO</h1>
+          <img src={logo} alt="Logo" />
+        </div>
+        <div>
+          <Link to="/login">
+            <button className="homepage-btn">log in</button>
+          </Link>
+          <Link to="/signup">
+            <button className="homepage-btn">sign up</button>
+          </Link>
+          <Link to="/forum">
+            <button className="homepage-btn">forum</button>
+          </Link>
         </div>
       </div>
     </div>
