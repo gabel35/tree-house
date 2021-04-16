@@ -16,13 +16,6 @@ body {
   0% {
     background-position: 0% 50%;
   }
-.login {
-    text-align: center;
-    margin-bottom: 20px;
-}
-.App .login img {
-  max-width: 150px;
-}
   50% {
     background-position: 100% 50%;
   }
