@@ -48,7 +48,7 @@ app.engine('hbs', exphbs({
 app.set('view engine', '.hbs');
 
 // test sql models
-var models = require("./app/models");
+var models = require("./models");
  
 models.sequelize.sync().then(function() {
  

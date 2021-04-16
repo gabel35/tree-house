@@ -3,7 +3,7 @@
 
 module.exports = function(sequelize, Sequelize) {
 
-    const user = sequelize.define('user', {
+    const User = sequelize.define('User', {
         
         id: {
             autoIncrement: true,
@@ -12,5 +12,6 @@ module.exports = function(sequelize, Sequelize) {
         },
         
         
-});
+    });
+    return User;
 };
