@@ -6,7 +6,10 @@ const app = express();
 const passport   = require('passport')
 const session    = require('express-session')
 const bodyParser = require('body-parser')
-env = require('dotenv').load();
+const env = require('dotenv');
+const exphbs = require('express-handlebars');
+
+
 
 
 // Serve up static assets (usually on heroku)
@@ -36,6 +39,13 @@ app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true}))
 app.use(passport.initialize());
  
 app.use(passport.session()); 
+
+//handlebars
+app.set('views', './app/views')
+app.engine('hbs', exphbs({
+    extname: '.hbs'
+}));
+app.set('view engine', '.hbs');
 
 // test sql models
 var models = require("./app/models");
