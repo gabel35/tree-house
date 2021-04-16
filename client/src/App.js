@@ -4,7 +4,7 @@ import {Switch, BrowserRouter, Route} from 'react-router-dom';
 import Home from './pages/Home/index';
 import Login from './pages/Login/index';
 import SignUp from './pages/SignUp/index';
-import TreeHouseForum from './pages/TreeHouseForum';
+import Pets from './pages/Pets/index';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
@@ -18,8 +18,8 @@ function App() {
         <Route path='/signup'>
           <SignUp/>
         </Route>
-        <Route path='/forum'>
-          <TreeHouseForum/>
+        <Route path='/Pets'>
+          <Pets/>
         </Route>
         <Route path='/'>
           <Home/>
