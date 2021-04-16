@@ -6,6 +6,8 @@ const app = express();
 const passport   = require('passport')
 const session    = require('express-session')
 const bodyParser = require('body-parser')
+env = require('dotenv').load();
+
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
