@@ -2,8 +2,8 @@ const bCrypt = require('bcrypt-nodejs');
 
 module.exports = function(passport, user) {
  
-    var User = user;
-    var LocalStrategy = require('passport-local').Strategy;
+    const User = user;
+    const LocalStrategy = require('passport-local').Strategy;
  
 }
 
@@ -17,7 +17,7 @@ passport.use('local-signup', new LocalStrategy(
     },
 
     function(req, email, password, done) {
-        var generateHash = function(password) {
+       const generateHash = function(password) {
  
             return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
          
@@ -44,9 +44,9 @@ passport.use('local-signup', new LocalStrategy(
 
         {
 
-            var userPassword = generateHash(password);
+            const userPassword = generateHash(password);
 
-            var data =
+            const data =
 
                 {
                     email: email,
