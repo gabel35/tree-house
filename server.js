@@ -47,7 +47,12 @@ app.engine('hbs', exphbs({
 }));
 app.set('view engine', '.hbs');
 
+//models
 
+//routes
+
+//passport strategies
+require('./config/passport/passport.js')(passport, models.user);
 
 
 // test sql models
