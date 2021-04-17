@@ -3,11 +3,6 @@ import { Container, Row, Col, Jumbotron, Card, Button, Badge, ListGroup } from '
 import { Link } from "react-router-dom";
 import "./style.css";
 import Header from '../../components/Header';
-import Pets from "../../assets/icons/icon-pets.svg";
-import Sport from "../../assets/icons/icon-sport.svg";
-import Sell from "../../assets/icons/icon-sell.svg";
-import Events from "../../assets/icons/icon-event.svg";
-import Profile from "../../assets/images/profile.png";
 
 function AddPost() {
   return (
