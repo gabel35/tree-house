@@ -14,13 +14,13 @@ const exphbs = require('express-handlebars');
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+  app.use(express.static("client/public"));
 }
 
 // Send every request to the React app
 // Define any API routes before this runs
 app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  res.sendFile(path.join(__dirname, "./client/public/index.html"));
 });
 
 app.listen(PORT, function() {
@@ -41,14 +41,25 @@ app.use(passport.initialize());
 app.use(passport.session()); 
 
 //handlebars
-app.set('views', './app/views')
+app.set('views', './views')
 app.engine('hbs', exphbs({
     extname: '.hbs'
 }));
 app.set('view engine', '.hbs');
 
+//models
+const models = require("./models"); //might have to change this 
+
+//routes
+const authRoute = require('./routes/auth.js')(app); //might have to change this
+
+
+//passport strategies
+require('./config/passport/passport.js')(passport, models.user);
+
+
 // test sql models
-var models = require("./models");
+
  
 models.sequelize.sync().then(function() {
  
