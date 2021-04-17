@@ -11,7 +11,7 @@ module.exports = function(sequelize, Sequelize) {
             type: Sequelize.INTEGER
         },
         email: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: false,
             unique: true,
             validate: {
@@ -19,7 +19,7 @@ module.exports = function(sequelize, Sequelize) {
             },
           },
         password: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: false,
             validate: {
               len: [6, 20],

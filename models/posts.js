@@ -1,16 +1,16 @@
-module.exports = function (sequelize, DataTypes) {
+module.exports = function (sequelize, Sequelize) {
     const Posts = sequelize.define("Posts", {
       title: {
-        type: DataTypes.TEXT,
+        type: Sequelize.TEXT,
         allowNull: false,
         unique: false,
       },
       text: {
-        type: DataTypes.STRING,
+        type: Sequelize.STRING,
         allowNull: false,
       },
       image: {
-        type: DataTypes.STRING,
+        type: Sequelize.STRING,
         defaultValue: false,
       }
     });
