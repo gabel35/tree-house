@@ -48,15 +48,18 @@ app.engine('hbs', exphbs({
 app.set('view engine', '.hbs');
 
 //models
+const models = require("./models"); //might have to change this 
 
 //routes
+const authRoute = require('./routes/auth.js')(app); //might have to change this
+
 
 //passport strategies
 require('./config/passport/passport.js')(passport, models.user);
 
 
 // test sql models
-const models = require("./models");
+
  
 models.sequelize.sync().then(function() {
  
