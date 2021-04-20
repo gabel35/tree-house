@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Button, Alert } from 'react-bootstrap';
 import "./style.css";
 import Sidebar from '../../components/Sidebar';
 import Footer from "../../components/Footer";
+// import ChildrenPost from "../../components/ChildrenPost";
 import Posts from "../../components/PostTemplate";
 import Add from "../../assets/icons/add.svg";
+
 import { getPostData, editPostData } from '../../utils'
 import { useHistory } from 'react-router'
 
-function TreeHouseForum() {
+function Children() {
+
   const browserHistory = useHistory()
   const [postData, setPostData] = useState([]);
 
@@ -26,6 +29,7 @@ function TreeHouseForum() {
 
   }
 
+
   return (
     <>
       <Sidebar />
@@ -35,7 +39,7 @@ function TreeHouseForum() {
             <Button variant="success" onClick={() => browserHistory.push('/postad')}>Add Post <img src={Add} width="15" alt="Logo" /></Button>
           </div>
           <Row>
-            {postData.map(item => (
+          {postData.map(item => (
               <>
                 <Col xs="12" sm="4" md="4" lg="4">
                   <Posts data={item} handler={deletehandler} />
@@ -57,4 +61,4 @@ function TreeHouseForum() {
   );
 }
 
-export default TreeHouseForum;
+export default Children;
