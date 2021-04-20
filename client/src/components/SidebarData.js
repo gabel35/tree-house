@@ -7,7 +7,7 @@ import * as ImIcons from 'react-icons/im';
 export const SidebarData = [
   {
     title: 'Profile',
-    path: '/userprofile',
+    path: '/profile',
     icon: <ImIcons.ImProfile />,
     cName: 'nav-text'
   },

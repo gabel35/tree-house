@@ -1,13 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Jumbotron, Card, Button, Badge, ListGroup } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import "./style.css";
-import Header from '../../components/Header';
+import Sidebar from '../../components/Sidebar';
+import Footer from "../../components/Footer";
+import Customer from "../../assets/icons/customer.svg";
+import Football from "../../assets/icons/football.svg";
+import Dollar from "../../assets/icons/dollar-symbol.svg";
+import Birthday from "../../assets/icons/birthday-cake.svg";
+import Profile from "../../assets/images/profile.png";
+import Posts from "../../components/PostTemplate";
+
+import { getPostData, editPostData } from '../../utils'
 
 function AddPost() {
+
+  const [postData, setPostData] = useState([]);
+
+  useEffect(() => {
+
+    setPostData(getPostData())
+
+  }, [])
+
+  function deletehandler(id) {
+    let filterAd = getPostData().filter(data => data.id != id)
+    setPostData(filterAd)
+    editPostData(filterAd)
+
+  }
+
   return (
     <>
-      <Header />
+      <Sidebar />
       <div className="Layout">
         <Container>
           <Row>
@@ -27,60 +52,47 @@ function AddPost() {
             <Col xs="12" sm="8" md="8" lg="8">
               <Row>
                 <Col xs="6" sm="3" md="3" lg="3">
-                  <Jumbotron className="text-center">
-                    <img src={Customer} width="60" alt="" />
-                  </Jumbotron>
+                  <Link to="/children">
+                    <Jumbotron className="text-center">
+                      <img src={Customer} width="60" alt="" />
+                    </Jumbotron>
+                  </Link>
                 </Col>
                 <Col xs="6" sm="3" md="3" lg="3">
-                  <Jumbotron className="text-center">
-                    <img src={Football} width="60" alt="" />
-                  </Jumbotron>
+                  <Link to="/sport">
+                    <Jumbotron className="text-center">
+                      <img src={Football} width="60" alt="" />
+                    </Jumbotron>
+                  </Link>
                 </Col>
                 <Col xs="6" sm="3" md="3" lg="3">
-                  <Jumbotron className="text-center">
-                    <img src={Dollar} width="60" alt="" />
-                  </Jumbotron>
+                  <Link to="/pets">
+                    <Jumbotron className="text-center">
+                      <img src={Dollar} width="60" alt="" />
+                    </Jumbotron>
+                  </Link>
                 </Col>
                 <Col xs="6" sm="3" md="3" lg="3">
-                  <Jumbotron className="text-center">
-                    <img src={Birthday} width="60" alt="" />
-                  </Jumbotron>
+                  <Link to="/events">
+                    <Jumbotron className="text-center">
+                      <img src={Birthday} width="60" alt="" />
+                    </Jumbotron>
+                    </Link>
                 </Col>
               </Row>
 
-              <Card className="marB">
-                <Card.Header className="d-flex">
-                  Featured
-                  <div className="mlA">
-                    <Badge variant="primary">Edit</Badge>
-                    <Badge variant="danger">Delete</Badge>
-                  </div>
-                </Card.Header>
-                <Card.Body>
-                  <Card.Title>Special title treatment</Card.Title>
-                  <Card.Text>
-                    With supporting text below as a natural lead-in to additional content.
-                  </Card.Text>
-                </Card.Body>
-              </Card>
+              <Row>
+                {postData.map(item => (
+                  <>
+                    <Col xs="12" sm="6" md="6" lg="6">
+                      <Posts data={item} handler={deletehandler} />
+                    </Col>
+                  </>
+                ))}
+              </Row>
 
-              <Card className="marB">
-                <Card.Header className="d-flex">
-                  Featured
-                  <div className="mlA">
-                    <Badge variant="primary">Edit</Badge>
-                    <Badge variant="danger">Delete</Badge>
-                  </div>
-                </Card.Header>
-                <Card.Body>
-                  <Card.Title>Special title treatment</Card.Title>
-                  <Card.Text>
-                    With supporting text below as a natural lead-in to additional content.
-                  </Card.Text>
-                </Card.Body>
-              </Card>
 
-              <Card className="marB">
+              {/* <Card className="marB">
                 <Card.Header className="d-flex">
                   Featured
                   <div className="mlA">
@@ -94,23 +106,7 @@ function AddPost() {
                     With supporting text below as a natural lead-in to additional content.
                   </Card.Text>
                 </Card.Body>
-              </Card>
-
-              <Card className="marB">
-                <Card.Header className="d-flex">
-                  Featured
-                  <div className="mlA">
-                    <Badge variant="primary">Edit</Badge>
-                    <Badge variant="danger">Delete</Badge>
-                  </div>
-                </Card.Header>
-                <Card.Body>
-                  <Card.Title>Special title treatment</Card.Title>
-                  <Card.Text>
-                    With supporting text below as a natural lead-in to additional content.
-                  </Card.Text>
-                </Card.Body>
-              </Card>
+              </Card> */}
 
             </Col>
           </Row>
