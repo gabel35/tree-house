@@ -6,26 +6,18 @@ import './LoginForm.css';
 function SignUp() {
 
     const [user, setUser] = useState('')
-    const [formObject, setFormObject] = useState({})
-
 
     function handleInputChange(event) {
         const { name, value } = event.target;
-        setFormObject({...formObject, [name]: value})
+        setUser({...user, [name]: value})
       };
 
-    function handleFormSubmit(event) {
+      function handleFormSubmit(event) {
         event.preventDefault();
-        if (formObject.firstName && formObject.lastName && formObject.phone && formObject.email && formObject.apt && formObject.password) {
-          API.saveUser({
-            firstName: formObject.firstName,
-            lastName: formObject.lastName,
-            phone: formObject.phone,
-            email: formObject.email,
-            apt: formObject.apt,
-            password: formObject.password
-          })
-            .then(res => setUser(res.data))
+        if (user.firstName && user.lastName && user.phone && user.email && user.apt && user.password) {
+            console.log("frontest-end user", user)
+            console.log("Account created")
+            API.saveUser(user)
             .catch(err => console.log(err));
         }
       };
