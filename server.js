@@ -9,7 +9,7 @@ app.use(express.json());
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+  app.use(express.static("client/public")); //double check folder names
 }
 
 //using backend routes
@@ -32,7 +32,7 @@ app.use(passport.initialize());
 app.use(passport.session()); 
 
 //routes
-// const authRoute = require('./routes/auth.js')(app); //might have to change this
+const authRoute = require('./routes/user.js')(app); //might have to change this - double check file names
 
 // models
 const models = require("./models");
