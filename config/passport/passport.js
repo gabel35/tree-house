@@ -1,17 +1,18 @@
-const bCrypt = require('bcrypt-nodejs');
+const bCrypt = require("bcrypt-nodejs");
+const passport = require ("passport");
 
 module.exports = function(passport, user) {
  
     const User = user;
-    const LocalStrategy = require('passport-local').Strategy;
+    const LocalStrategy = require("passport-local").Strategy;
  
 }
 
-passport.use('local-signup', new LocalStrategy(
+passport.use("local-signup", new LocalStrategy(
  
     {
-        usernameField: 'email',
-        passwordField: 'password',
+        usernameField: "email",
+        passwordField: "password",
         passReqToCallback: true
  
     },
@@ -23,7 +24,33 @@ passport.use('local-signup', new LocalStrategy(
          
         };
     
+    // serialize function
+    passport.serializeUser(function(user, done) {
  
+            done(null, user.id);
+         
+        });
+ 
+    // deserialize function
+    passport.deserializeUser(function(id, done) {
+ 
+        User.findById(id).then(function(user) {
+     
+            if (user) {
+     
+                done(null, user.get());
+     
+            } else {
+     
+                done(user.errors, null);
+     
+            }
+     
+        });
+     
+    });
+
+
 //check if user exists, if not add one
 
     user.findOne({

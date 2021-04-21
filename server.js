@@ -32,7 +32,8 @@ app.use(passport.initialize());
 app.use(passport.session()); 
 
 //routes
-const authRoute = require('./routes/user.js')(app); //might have to change this - double check file names
+const authRoute = require('./routes/api/user.js')(app, passport); //might have to change this -> changed file names to match 
+
 
 // models
 const models = require("./models");
