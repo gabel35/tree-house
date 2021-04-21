@@ -59,7 +59,7 @@ passport.use('local-signup', new LocalStrategy(
 
                 };
 
-
+            //sequelize method for adding new entries
             User.create(data).then(function(newUser, created) {
 
                 if (!newUser) {
