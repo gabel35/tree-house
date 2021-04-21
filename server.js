@@ -51,7 +51,7 @@ app.set('view engine', '.hbs');
 const models = require("./models"); //might have to change this 
 
 //routes
-const authRoute = require('./routes/auth.js')(app); //might have to change this
+const authRoute = require('./routes/api/user.js')(app, passport); //might have to change this -> changed file names to match 
 
 
 //passport strategies
