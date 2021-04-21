@@ -32,14 +32,18 @@ app.use(passport.initialize());
 app.use(passport.session()); 
 
 //routes
-const authRoute = require('./routes/auth.js')(app); //might have to change this
+// const authRoute = require('./routes/auth.js')(app); //might have to change this
 
 // models
 const models = require("./models");
+console.log("models are:", models);
+const sequelize = require('./config/config.js');
 
 // test sql models
-models.sequelize.sync().then(function() {
-  console.log('Nice! Database looks fine')
+models.User.sequelize.sync().then(function() {
+  models.Posts.sequelize.sync().then(function() {
+    console.log('Nice! Database looks fine')
+  })
 }).catch(function(err) {
   console.log(err, "Something went wrong with the Database Update!")
 });
