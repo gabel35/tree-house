@@ -7,7 +7,7 @@ import Footer from "../../components/Footer";
 import Posts from "../../components/PostTemplate";
 import Add from "../../assets/icons/add.svg";
 
-import { getPostData, editPostData } from '../../utils'
+import { getPostData, editPostData } from '../../utils/Posts'
 import { useHistory } from 'react-router'
 
 function Event() {

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Form } from 'react-bootstrap';
 import './LoginForm.css';
-import { updatePostData, getPostData, editPostData } from '../utils'
+import { updatePostData, getPostData, editPostData } from '../utils/Posts'
 import { useLocation, useHistory } from 'react-router'
+import DragImage from './DragImage';
 
 
 
@@ -77,7 +78,7 @@ function EditAdd(props) {
       <div className="form-inner">
         <h2>{props.title}</h2>
         <Form.Group>
-          <Form.File id="exampleFormControlFile1" label="Upload Photo" />
+          <DragImage />
         </Form.Group>
         <Form.Group>
           <Form.Control type="text" name="title" placeholder="Enter Ad Title" value={adDetails.title} onChange={e => setAdDetails({ ...adDetails, title: e.target.value })} />
