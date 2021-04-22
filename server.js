@@ -32,16 +32,15 @@ app.use(passport.initialize());
 app.use(passport.session()); 
 
 //routes
-const authRoute = require('./routes/api/user.js')(app, passport); //might have to change this -> changed file names to match 
-
+// const authRoute = require('./routes/user.js')(app); //might have to change this - double check file names
 
 // models
-const models = require("./models");
+var models = require("./models");
 console.log("models are:", models);
 const sequelize = require('./config/config.js');
 
 // test sql models
-models.User.sequelize.sync().then(function() {
+models.User.sync().then(function() {
   models.Posts.sequelize.sync().then(function() {
     console.log('Nice! Database looks fine')
   })
@@ -50,7 +49,7 @@ models.User.sequelize.sync().then(function() {
 });
 
 //passport strategies
-require('./config/passport/passport.js')(passport, models.user);
+// require('./config/passport/passport.js')(passport, models.user);
 
 
 //your app is being served

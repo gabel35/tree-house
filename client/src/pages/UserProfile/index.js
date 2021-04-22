@@ -10,10 +10,26 @@ import Dollar from "../../assets/icons/dollar-symbol.svg";
 import Birthday from "../../assets/icons/birthday-cake.svg";
 import Profile from "../../assets/images/profile.png";
 import Posts from "../../components/PostTemplate";
+import API from "../../utils/API";
 
-import { getPostData, editPostData } from '../../utils'
+import { getPostData, editPostData } from '../../utils/Posts'
 
 function AddPost() {
+
+  const [user, setUser] = useState([]);
+
+  useEffect(() => {
+    loadUser()
+  }, [])
+
+  function loadUser () {
+    API.getUser()
+    .then(res => {
+      console.log(res)
+      setUser(res)
+    })
+    .catch(err => console.log(err))
+  }
 
   const [postData, setPostData] = useState([]);
 
@@ -29,6 +45,8 @@ function AddPost() {
     editPostData(filterAd)
 
   }
+
+
 
   return (
     <>
