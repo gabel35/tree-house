@@ -29,7 +29,7 @@ function TreeHouseForum() {
   return (
     <>
       <Sidebar />
-      <div className="Layout">
+      <div className="Layout" >
         <Container>
           <div className="text-center mrbt">
             <Button variant="success" onClick={() => browserHistory.push('/postad')}>Add Post <img src={Add} width="15" alt="Logo" /></Button>

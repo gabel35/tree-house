@@ -62,7 +62,7 @@ const Header = (props) => {
                     <Link to="/profile" className="mr10">
                         <img src={User} width="30" alt="Logo" />
                     </Link>
-                    <Button variant="info" href="/">Log Out</Button>
+                    <Button className="logoutbtn" href="/">Log Out</Button>
                 </div>
             </Col>
         </Row>
