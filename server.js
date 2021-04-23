@@ -1,11 +1,14 @@
 const express = require("express");
-
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -14,13 +17,16 @@ if (process.env.NODE_ENV === "production") {
 
 //using backend routes
 const routes = require("./routes");
-app.use(routes);
+app.use('/', routes);
+
+const secureRoute = require('./routes/secure-routes');
 
 
-const passport   = require('passport')
-const session    = require('express-session')
-const bodyParser = require('body-parser')
-const env = require('dotenv');
+
+const passport = require("passport");
+const session = require("express-session");
+const bodyParser = require("body-parser");
+const env = require("dotenv");
 
 
 // passport
@@ -31,18 +37,18 @@ app.use(passport.initialize());
  
 app.use(passport.session()); 
 
-//routes
-// const authRoute = require('./routes/user.js')(app); //might have to change this - double check file names
+// JWT strategy middleware
+app.use('/user', passport.authenticate("jwt", { session: false }), secureRoute);
 
 // models
-var models = require("./models");
+const models = require("./models");
 console.log("models are:", models);
-const sequelize = require('./config/config.js');
+const sequelize = require("./config/config.js");
 
 // test sql models
 models.User.sync().then(function() {
   models.Posts.sequelize.sync().then(function() {
-    console.log('Nice! Database looks fine')
+    console.log("Nice! Database looks fine")
   })
 }).catch(function(err) {
   console.log(err, "Something went wrong with the Database Update!")
