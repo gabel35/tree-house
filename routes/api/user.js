@@ -1,6 +1,6 @@
-const express = require('express');
-const passport = require('passport');
-const jwt = require('jsonwebtoken');
+const express = require("express");
+const passport = require("passport");
+const jwt = require("jsonwebtoken");
 const router = require("express").Router();
 const User = require("../../controllers/user.js");
 const db = require("../../models");
@@ -11,11 +11,11 @@ router
 
   // signup endpoint
   router.post(
-    '/signup',
-    passport.authenticate('signup', { session: false }),
+    "/signup",
+    passport.authenticate("signup", { session: false }),
     async (req, res, next) => {
       res.json({
-        message: 'Signup successful',
+        message: "Signup successful",
         user: req.user
       });
     }
@@ -25,14 +25,14 @@ router
 
 // login endpoint
 router.post(
-  '/login',
+  "/login",
   async (req, res, next) => {
     passport.authenticate(
-      'login',
+      "login",
       async (err, user, info) => {
         try {
           if (err || !user) {
-            const error = new Error('An error occurred.');
+            const error = new Error("An error occurred.");
 
             return next(error);
           }
@@ -44,7 +44,7 @@ router.post(
               if (error) return next(error);
 
               const body = { _id: user._id, email: user.email };
-              const token = jwt.sign({ user: body }, 'TOP_SECRET');
+              const token = jwt.sign({ user: body }, "TOP_SECRET");
 
               return res.json({ token });
             }

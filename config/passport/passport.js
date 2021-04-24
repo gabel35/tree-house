@@ -7,7 +7,7 @@ module.exports = function(passport, user) {
  
     
 
-
+//SIGN UP
 passport.use("local-signup", new LocalStrategy(
  
     {
@@ -63,7 +63,7 @@ passport.use("local-signup", new LocalStrategy(
 
         {
             return done(null, false, {
-                message: 'That email is already taken'
+                message: "That email is already taken"
             });
 
         } else
@@ -109,18 +109,77 @@ passport.use("local-signup", new LocalStrategy(
 }
 
 ));
-
-
+//LOGIN
+passport.use("local-signin", new LocalStrategy(
+ 
+    {
+        usernameField: "email",
+        passwordField: "password",
+        passReqToCallback: true 
+    },
+ 
+ 
+    function(req, email, password, done) {
+ 
+        const User = user;
+ 
+        const isValidPassword = function(userpass, password) {
+ 
+            return bCrypt.compareSync(password, userpass);
+ 
+        }
+ 
+        User.findOne({
+            where: {
+                email: email
+            }
+        }).then(function(user) {
+ 
+            if (!user) {
+ 
+                return done(null, false, {
+                    message: "Email does not exist"
+                });
+ 
+            }
+ 
+            if (!isValidPassword(user.password, password)) {
+ 
+                return done(null, false, {
+                    message: "Incorrect password."
+                });
+ 
+            }
+ 
+ 
+            const userinfo = user.get();
+            return done(null, userinfo);
+ 
+ 
+        }).catch(function(err) {
+ 
+            console.log("Error:", err);
+ 
+            return done(null, false, {
+                message: "Something went wrong with your Signin"
+            });
+ 
+        });
+ 
+ 
+    }
+ 
+));
 // verifying JWT tokens
 
-const JWTstrategy = require('passport-jwt').Strategy;
-const ExtractJWT = require('passport-jwt').ExtractJwt;
+const JWTstrategy = require("passport-jwt").Strategy;
+const ExtractJWT = require("passport-jwt").ExtractJwt;
 
 passport.use(
     new JWTstrategy(
       {
-        secretOrKey: 'TOP_SECRET',
-        jwtFromRequest: ExtractJWT.fromUrlQueryParameter('secret_token')
+        secretOrKey: "TOP_SECRET",
+        jwtFromRequest: ExtractJWT.fromUrlQueryParameter("secret_token")
       },
       async (token, done) => {
         try {
