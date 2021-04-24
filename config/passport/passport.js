@@ -1,12 +1,12 @@
 const bCrypt = require("bcrypt-nodejs");
 const passport = require ("passport");
-
+const User = require("../../models/user");
+const LocalStrategy = require("passport-local").Strategy;
+ 
 module.exports = function(passport, user) {
  
-    const User = user;
-    const LocalStrategy = require("passport-local").Strategy;
- 
-}
+    
+
 
 passport.use("local-signup", new LocalStrategy(
  
@@ -53,7 +53,7 @@ passport.use("local-signup", new LocalStrategy(
 
 //check if user exists, if not add one
 
-    user.findOne({
+    User.findOne({
         where: {
             email: email
         }
@@ -131,3 +131,4 @@ passport.use(
       }
     )
   );
+    }
