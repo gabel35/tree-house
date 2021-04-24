@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Home from './pages/Home/index';
 import Login from './pages/Login/index';
 import SignUp from './pages/SignUp/index';
-import TreeHouseForum from './pages/TreeHouseForum';
+import Pets from './pages/Pets';
 import AddPost from './pages/AddPost';
 import UserProfile from './pages/UserProfile';
 import "./App.css";
@@ -12,7 +12,6 @@ import Children from './pages/Children';
 import Event from './pages/Event';
 import Football from './pages/Football';
 import EditAdd from './pages/EditAdd';
-
 
 function App(props) {
   return (
@@ -34,7 +33,7 @@ function App(props) {
           <Football />
         </Route>
         <Route path='/pets'>
-          <TreeHouseForum />
+          <Pets />
         </Route>
         <Route path='/post'>
           <AddPost />
