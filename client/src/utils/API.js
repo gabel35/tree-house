@@ -11,8 +11,8 @@ export default {
     return axios.post("/api/user/signup", userData);
   },
   login: function(userData) {
-    console.log("frontend sign", userData)
-    return axios.post("/api/user/sigin", userData);
+    console.log("frontend login", userData)
+    return axios.post("/api/user/login", userData);
   }
 
 
