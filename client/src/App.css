@@ -166,3 +166,9 @@ input:focus {
     background-position: top left;
   }
 }
+
+.bg-login
+{
+  background: rgb(122,176,104);
+  background: linear-gradient(90deg, rgba(122,176,104,0.37860355323770134) 45%, rgba(224,244,157,0.19933184455422792) 100%);
+}

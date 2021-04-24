@@ -7,8 +7,9 @@ import Posts from "../../components/PostTemplate";
 import Add from "../../assets/icons/add.svg";
 import { getPostData, editPostData } from '../../utils/Posts'
 import { useHistory } from 'react-router'
+import { Addbtn } from "../../components/Addbtn";
 
-function TreeHouseForum() {
+function Pets() {
   const browserHistory = useHistory()
   const [postData, setPostData] = useState([]);
 
@@ -32,7 +33,15 @@ function TreeHouseForum() {
       <div className="Layout" >
         <Container>
           <div className="text-center mrbt">
-            <Button variant="success" onClick={() => browserHistory.push('/postad')}>Add Post <img src={Add} width="15" alt="Logo" /></Button>
+
+            {/* THIS IS ADD POST BUTTON */}
+
+            
+            {/* <Button variant="success" onClick={() => browserHistory.push('/postad')}>Add Post <img src={Add} width="15" alt="Logo" /></Button> */}
+
+            <Addbtn/>
+           
+
           </div>
           <Row>
             {postData.map(item => (
@@ -44,8 +53,8 @@ function TreeHouseForum() {
             ))}
             {postData.length == 0 &&
               <Col xs="12" sm="12" md="12" lg="12" className="text-center">
-                <Alert variant="warning">
-                  There is no PostAd data, you can add your first post to see the data
+                <Alert variant="light">
+                You don't have any posts, please create one!
                 </Alert>
               </Col>
             }
@@ -57,4 +66,4 @@ function TreeHouseForum() {
   );
 }
 
-export default TreeHouseForum;
+export default Pets;
