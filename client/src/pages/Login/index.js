@@ -4,7 +4,7 @@ import "./style.css";
 import LoginForm from "../../components/LoginForm";
 import '../Home/style.css';
 import Logo from "../../assets/images/logo.png";
-import API from "../../utils/API"
+import API from "../../utils/API";
 
 function Login() {
   const adminUser = {
