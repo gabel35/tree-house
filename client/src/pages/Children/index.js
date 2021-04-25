@@ -1,29 +1,34 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Button, Alert } from 'react-bootstrap';
 import "./style.css";
 import Sidebar from '../../components/Sidebar';
 import Footer from "../../components/Footer";
+// import ChildrenPost from "../../components/ChildrenPost";
 import Posts from "../../components/PostTemplate";
 import Add from "../../assets/icons/add.svg";
+
 import { getPostData, editPostData } from '../../utils/Posts'
 import { useHistory } from 'react-router'
 
-function TreeHouseForum() {
+function Children() {
+
   const browserHistory = useHistory()
   const [postData, setPostData] = useState([]);
+
   useEffect(() => {
 
-    setPostData(getPostData('pets'))
+    setPostData(getPostData('children'))
 
   }, [])
 
 
   function deletehandler(id) {
-    let filterAd = getPostData('pets').filter(data => data.id != id)
+    let filterAd = getPostData('children').filter(data => data.id != id)
     setPostData(filterAd)
-    editPostData(filterAd, 'pets')
+    editPostData(filterAd, 'children')
 
   }
+
 
   return (
     <>
@@ -31,10 +36,10 @@ function TreeHouseForum() {
       <div className="Layout">
         <Container>
           <div className="text-center mrbt">
-            <Button variant="success" onClick={() => browserHistory.push('/postad?type=pets')}>Add Post <img src={Add} width="15" alt="Logo" /></Button>
+            <Button variant="success" onClick={() => browserHistory.push('/postad?type=children')}>Add Post <img src={Add} width="15" alt="Logo" /></Button>
           </div>
           <h1 className="heading_h">
-            Pets
+            Children
           </h1>
           <Row>
             {postData.map(item => (
@@ -59,4 +64,4 @@ function TreeHouseForum() {
   );
 }
 
-export default TreeHouseForum;
+export default Children;

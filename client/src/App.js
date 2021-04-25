@@ -1,28 +1,55 @@
-  
 import React from 'react';
-import {Switch, BrowserRouter, Route} from 'react-router-dom';
+import { Switch, BrowserRouter, Route } from 'react-router-dom';
+import "bootstrap/dist/css/bootstrap.min.css";
 import Home from './pages/Home/index';
 import Login from './pages/Login/index';
 import SignUp from './pages/SignUp/index';
 import TreeHouseForum from './pages/TreeHouseForum';
-import "bootstrap/dist/css/bootstrap.min.css";
+import AddPost from './pages/AddPost';
+import UserProfile from './pages/UserProfile';
+import "./App.css";
+import Children from './pages/Children';
+import Event from './pages/Event';
+import Football from './pages/Football';
+import EditAdd from './pages/EditAdd';
 
 
-function App() {
+function App(props) {
   return (
     <BrowserRouter>
       <Switch>
         <Route path='/login'>
-          <Login/>
+          <Login />
         </Route>
         <Route path='/signup'>
-          <SignUp/>
+          <SignUp />
         </Route>
-        <Route path='/forum'>
-          <TreeHouseForum/>
+        <Route path='/children'>
+          <Children />
+        </Route>
+        <Route path='/events'>
+          <Event />
+        </Route>
+        <Route path='/sport'>
+          <Football />
+        </Route>
+        <Route path='/pets'>
+          <TreeHouseForum />
+        </Route>
+        <Route path='/post'>
+          <AddPost />
+        </Route>
+        <Route path='/profile'>
+          <UserProfile />
+        </Route>
+        <Route path='/edit-add/:id' {...props}>
+          <EditAdd title={'Edit AD'} />
+        </Route>
+        <Route path='/postad' {...props}>
+          <EditAdd title={'Post AD'} />
         </Route>
         <Route path='/'>
-          <Home/>
+          <Home />
         </Route>
       </Switch>
     </BrowserRouter>
@@ -30,3 +57,4 @@ function App() {
 }
 
 export default App
+
