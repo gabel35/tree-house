@@ -18,6 +18,7 @@ function SignUp() {
             console.log("frontest-end user", user)
             console.log("Account created")
             API.saveUser(user)
+            // location.pathname = "/profile"
             .catch(err => console.log(err));
         }
       };

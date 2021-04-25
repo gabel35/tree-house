@@ -4,14 +4,14 @@ import "./style.css";
 import LoginForm from "../../components/LoginForm";
 import '../Home/style.css';
 import Logo from "../../assets/images/logo.png";
-import API from "../../utils/API";
+import API from "../../utils/API"
 
 function Login() {
   const adminUser = {
-    email: "admin@admin.com",
+    email: "gabrieljose3135@gmail.com",
     password: "admin123",
   };
-  const [user, setUser] = useState({ name: "", email: "" });
+  const [user, setUser] = useState({ email: "",  password: "" });
 
   const [error, setError] = useState("");
 
@@ -25,8 +25,9 @@ function Login() {
     ) {
       console.log("Logged in");
       setUser({
-        name: details.name,
         email: details.email,
+        password: details.password,
+
       });
     } else {
       console.log("Details do not match!");
