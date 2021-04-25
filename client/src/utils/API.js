@@ -13,8 +13,15 @@ export default {
   login: function(userData) {
     console.log("frontend login", userData)
     return axios.post("/api/user/login", userData);
+  },
+  //gets the posts per user
+  getUserPosts: function(id) {
+    return axios.get("/api/user/" + id + "/posts")
+  },
+  //get all posts
+  getPosts: function() {
+    return axios.get("/api/posts")
   }
-
 
 };
 
