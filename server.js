@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/public")); //double check folder names
+  app.use(express.static("./client/public/")); //double check folder names
 }
 
 //using backend routes
