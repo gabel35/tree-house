@@ -6,6 +6,7 @@ import Footer from "../../components/Footer";
 // import EventPost from "../../components/EventPost";
 import Posts from "../../components/PostTemplate";
 import Add from "../../assets/icons/add.svg";
+import { Addbtn } from "../../components/Addbtn";
 
 import { getPostData, editPostData } from '../../utils/Posts'
 import { useHistory } from 'react-router'
@@ -50,8 +51,8 @@ function Event() {
             ))}
             {postData.length == 0 &&
               <Col xs="12" sm="12" md="12" lg="12" className="text-center">
-                <Alert variant="warning">
-                  There is no PostAd data, you can add your first post to see the data
+                <Alert variant="light">
+                  You don't have any posts, please create one!
                 </Alert>
               </Col>
             }

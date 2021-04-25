@@ -1,9 +1,10 @@
 import React, { useState} from 'react';
+import { Link } from "react-router-dom";
 import { Form } from 'react-bootstrap';
 import './LoginForm.css';
 
 function LoginForm({ Login, error }) {
-    const [details, setDetails] = useState({name: "", email: "", password: ""});
+    const [details, setDetails] = useState({email: "", password: ""});
 
 const submitHandler = e => {
     e.preventDefault();
