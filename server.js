@@ -10,6 +10,7 @@ const env = require("dotenv");
 const routes = require("./routes");
 const models = require("./models");
 const sequelize = require("./config/config.js");
+// const storage = require("./db/storage.js")
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -23,6 +24,8 @@ if (process.env.NODE_ENV === "production") {
 
 //using backend routes
 app.use("/", routes);
+//using image save database/api
+// app.use(storage)
 
 // passport
 //secret session
@@ -40,7 +43,7 @@ console.log("models are:", models);
 
 
 // test sql models
-models.User.sync().then(function() {
+models.User.sequelize.sync().then(function() {
   models.Posts.sequelize.sync().then(function() {
     console.log("Nice! Database looks fine")
   })

@@ -11,9 +11,9 @@ function SignUp() {
     function handleInputChange(event) {
         const { name, value } = event.target;
         setUser({...user, [name]: value})
-      };
+    };
 
-      function handleFormSubmit(event) {
+    function handleFormSubmit(event) {
         event.preventDefault();
         if (user.firstName && user.lastName && user.phone && user.email && user.apt && user.password) {
             console.log("frontest-end user", user)
@@ -21,7 +21,7 @@ function SignUp() {
             API.saveUser(user)
             .catch(err => console.log(err));
         }
-      };
+    };
 
 
     return (
@@ -30,13 +30,13 @@ function SignUp() {
                 <h2>Sign Up</h2>
                 {/* {error!} */}
                 <Form.Group>
-                    <Form.Control type="text" name="firstName" id="name" placeholder="First Name" onChange={handleInputChange} />
+                    <Form.Control type="text" name="firstName" id="firstName" placeholder="First Name" onChange={handleInputChange} />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Control type="text" name="lastName" id="name" placeholder="Last Name" onChange={handleInputChange} />
+                    <Form.Control type="text" name="lastName" id="lastName" placeholder="Last Name" onChange={handleInputChange} />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Control type="phone" name="phone" id="name" placeholder="Phone Number" onChange={handleInputChange} />
+                    <Form.Control type="phone" name="phone" id="phone" placeholder="Phone Number" onChange={handleInputChange} />
                 </Form.Group>
                 <Form.Group>
                     <Form.Control type="email" name="email" id="email" placeholder="Enter Email" onChange={handleInputChange} />
@@ -48,7 +48,7 @@ function SignUp() {
                     <Form.Control type="password"  name="password" id="password" placeholder="Enter Password" onChange={handleInputChange} />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Control type="password"  name="password" id="password" placeholder="Enter Repeat Password" />
+                    <Form.Control type="password"  name="confirmPassword" id="confirmPassword" placeholder="Enter Password Again" />
                 </Form.Group>
                 <Form.Group>
                     <Link to="/login">

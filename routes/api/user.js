@@ -3,11 +3,25 @@ const passport = require("passport");
 const jwt = require("jsonwebtoken");
 const router = require("express").Router();
 const User = require("../../controllers/user.js");
+const Posts = require("../../controllers/posts.js")
 const db = require("../../models");
 
 router
   .route("/signup")
   .post(User.create);
+
+router
+  .route("/:id")
+  .get(User.findById)
+
+router
+  .route("/postad")
+  .post(Posts.create)
+
+router
+  .route("/edit-add/:id")
+  .put(Posts.update)
+  .delete(Posts.remove)
 
   // signup endpoint
   router.post(

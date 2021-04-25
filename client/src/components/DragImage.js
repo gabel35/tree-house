@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState} from "react";
+// import axios from 'axios';
 import ImageUploading from "react-images-uploading";
 import { Button } from 'react-bootstrap';
 
@@ -10,6 +11,40 @@ function DragImage() {
         console.log(imageList, addUpdateIndex);
         setImages(imageList);
     };
+
+    // const [values, setValues] = useState({
+    //     imagePreviewUrl: "", 
+    //     picFile: null
+    //  })
+    //  let fileInput = React.createRef(); 
+
+//      // Activates user file input to set div
+//     const editProfilePic = () => {
+//         fileInput.current.click();
+//     } 
+//     // Handles the image that was input by user
+//     const handleImageChange = e => {
+//         e.preventDefault();
+//         let reader = new FileReader();
+//         let inFile = e.target.files[0];
+//         reader.onloadend = () => {
+//             setValues({...values, 
+//                 picFile: inFile, 
+//                 imagePreviewUrl: reader.result
+//             })
+//         };
+//         reader.readAsDataURL(inFile);
+//     };
+
+//     const handleSubmit = async() => {
+//       // response stores the response back from the API
+//       response = await axios.post(`/storage/upload`,form_data)
+//       .catch(error => {
+//          alert("Error occurred while uploading picture, try uploading a smaller image size or try again later.")
+//          return;
+//    });
+//    }
+
 
     return (
         <div className="App uplodimg">

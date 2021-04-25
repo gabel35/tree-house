@@ -93,7 +93,7 @@ function AddPost() {
               <ListGroup variant="flush">
                 <ListGroup.Item><b>Name : </b> Gabriel J. Sanchez</ListGroup.Item>
                 <ListGroup.Item><b>Phone : </b> 973 573 4431</ListGroup.Item>
-                <ListGroup.Item><b>Email : </b> abc@example.com</ListGroup.Item>
+                <ListGroup.Item><b>Email : </b> gabrieljose3135@gmail.com</ListGroup.Item>
                 <ListGroup.Item><b>Apartment : </b> 1S</ListGroup.Item>
               </ListGroup>
             </Col>

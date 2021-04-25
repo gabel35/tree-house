@@ -1,15 +1,19 @@
-const Posts = require("../models/posts");
+const { User, Posts } = require("../models");
 
 // Defining methods for the UsersController
 module.exports = {
   findAll: function(req, res) {
-    Posts.find(req.query)
+    Posts.findAll(req.query)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
-    Posts.findById(req.params.id)
-      .then(dbModel => res.json(dbModel))
+    User.findOne({
+      where: {
+        id: req.params.id,
+      },
+      include: [User],
+    }).then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
@@ -24,7 +28,7 @@ module.exports = {
   },
   remove: function(req, res) {
     Posts.findById({ _id: req.params.id })
-      .then(dbModel => dbModel.remove())
+      .then(dbModel => dbModel.destroy())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   }
