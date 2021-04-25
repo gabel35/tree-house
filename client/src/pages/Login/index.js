@@ -8,7 +8,7 @@ import API from "../../utils/API"
 
 function Login() {
   const adminUser = {
-    email: "admin@admin.com",
+    email: "gabrieljose3135@gmail.com",
     password: "admin123",
   };
   const [user, setUser] = useState({ name: "", email: "" });
