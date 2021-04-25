@@ -36,7 +36,7 @@ function Children() {
       <div className="Layout">
         <Container>
           <div className="text-center mrbt">
-            <Button variant="success" onClick={() => browserHistory.push('/postad?type=children')}>Add Post <img src={Add} width="15" alt="Logo" /></Button>
+            <Addbtn variant="success" onClick={() => browserHistory.push('/postad?type=children')} />
           </div>
           <h1 className="heading_h">
             Children

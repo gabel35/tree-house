@@ -13,7 +13,7 @@ const ChildrenPost = (props) => {
           Hey Guys! Is someone available to watch Rex next weekend while I am out of town?
         </Card.Text>
         <h5>posted by Alex</h5>
-        <Button variant="success" href = "mailto: abc@example.com">message</Button>
+        <Button variant="success" href = "mailto: gabrieljose3135@gmail.com">message</Button>
       </Card.Body>
     </Card>
   );
