@@ -1,4 +1,5 @@
 import React, { useState} from 'react';
+import { Link } from "react-router-dom";
 import { Form } from 'react-bootstrap';
 import API from '../utils/API'
 import './LoginForm.css';
@@ -18,7 +19,6 @@ function SignUp() {
             console.log("frontest-end user", user)
             console.log("Account created")
             API.saveUser(user)
-            // location.pathname = "/profile"
             .catch(err => console.log(err));
         }
       };
@@ -51,11 +51,13 @@ function SignUp() {
                     <Form.Control type="password"  name="password" id="password" placeholder="Enter Repeat Password" />
                 </Form.Group>
                 <Form.Group>
-                    <div className="homepage-btn">
-                        <span>
-                            <input type="submit" value="SIGN UP" onClick={handleFormSubmit} />
-                        </span>
-                    </div>
+                    <Link to="/login">
+                        <div className="homepage-btn">
+                            <span>
+                                <input type="submit" value="SIGN UP" onClick={handleFormSubmit} />
+                            </span>
+                        </div>
+                    </Link>
                 </Form.Group>
             </div>
         </Form>

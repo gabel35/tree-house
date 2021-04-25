@@ -24,9 +24,9 @@ function Home() {
             <Link to="/signup">
               <button className="homepage-btn"><span>Sign Up</span></button>
             </Link>
-            <Link to="/pets">
+            {/* <Link to="/pets">
               <button className="homepage-btn"><span>Forum</span></button>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

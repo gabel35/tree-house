@@ -142,6 +142,45 @@ input:focus {
  .mrbt {
    margin-bottom: 30px;
  }
+ .uplodimg {
+   padding: 0px;
+   margin-top: 50px;
+ }
+ .upload__image-wrapper {
+   width: 100%;
+ }
+ .upload__image-wrapper .alert-secondary {
+   width: 100%;
+   min-height: 120px;
+   border: none;
+   border-radius: 3px;
+ }
+ .card {
+   margin-bottom: 30px;
+ }
+ .imgUp {
+   margin: 20px 0px;
+ }
+ .imgUp img {
+  max-width: 200px;
+ }
+ .image-item__btn-wrapper button {
+   margin: 0px 10px;
+ }
+ .imgupdated {
+    padding: 0px 20px 20px;
+    border: solid 1px #e2e3e5;
+    margin-top: 20px;
+ }
+ a.hoverbtb:hover {
+   color: #ffffff!important;
+ }
+ .heading_h {
+   margin: 20px 0px 30px;
+   text-align: left;
+   font-weight: 600;
+   font-size: 35px;
+ }
 
  @media (min-width: 576px) {
     .jumbotron {

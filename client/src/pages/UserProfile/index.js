@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Jumbotron, Card, Button, Badge, ListGroup } from 'react-bootstrap';
+import { Container, Row, Col, Jumbotron, Card, Button, Badge, ListGroup, Alert } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import "./style.css";
 import Sidebar from '../../components/Sidebar';
@@ -22,27 +22,59 @@ function AddPost() {
     loadUser()
   }, [])
 
-  function loadUser () {
+  function loadUser() {
     API.getUser()
-    .then(res => {
-      console.log(res)
-      setUser(res)
-    })
-    .catch(err => console.log(err))
+      .then(res => {
+        console.log(res)
+        setUser(res)
+      })
+      .catch(err => console.log(err))
   }
 
-  const [postData, setPostData] = useState([]);
+  const [petsData, setPetData] = useState([]);
+  const [childrenData, setChilrenData] = useState([]);
+  const [eventData, setEventData] = useState([]);
+  const [sportData, setSportData] = useState([]);
+  const [noAdData, setAdData] = useState(false);
 
   useEffect(() => {
 
-    setPostData(getPostData())
+    setPetData(getPostData('pets'))
+    setChilrenData(getPostData('children'))
+    setEventData(getPostData('events'))
+    setSportData(getPostData('sport'))
 
   }, [])
 
-  function deletehandler(id) {
-    let filterAd = getPostData().filter(data => data.id != id)
-    setPostData(filterAd)
-    editPostData(filterAd)
+  useEffect(() => {
+    if (petsData.length == 0 && childrenData.length == 0 && eventData.length == 0 && sportData.length == 0) {
+      setAdData(true)
+    } else {
+      setAdData(false)
+    }
+
+  }, [petsData, childrenData, eventData, sportData])
+
+
+
+  function deletehandler(id, type) {
+    let filterAd = getPostData(type).filter(data => data.id != id)
+    editPostData(filterAd, type)
+
+    switch (type) {
+      case 'pets':
+        setPetData(filterAd)
+        break;
+      case 'children':
+        setChilrenData(filterAd)
+        break;
+      case 'sport':
+        setSportData(filterAd)
+        break;
+      case 'events':
+        setEventData(filterAd)
+        break;
+    }
 
   }
 
@@ -62,9 +94,7 @@ function AddPost() {
                 <ListGroup.Item><b>Name : </b> Gabriel J. Sanchez</ListGroup.Item>
                 <ListGroup.Item><b>Phone : </b> 973 573 4431</ListGroup.Item>
                 <ListGroup.Item><b>Email : </b> abc@example.com</ListGroup.Item>
-                <ListGroup.Item><b>Details : </b> With supporting text below as a natural lead-in to additional content.</ListGroup.Item>
-                <ListGroup.Item><b>Details 2 : </b> With supporting text below as a natural lead-in to additional content.</ListGroup.Item>
-                <ListGroup.Item><b>Details 3 : </b> With supporting text below as a natural lead-in to additional content.</ListGroup.Item>
+                <ListGroup.Item><b>Apartment : </b> 1S</ListGroup.Item>
               </ListGroup>
             </Col>
             <Col xs="12" sm="8" md="8" lg="8">
@@ -95,20 +125,86 @@ function AddPost() {
                     <Jumbotron className="text-center">
                       <img src={Birthday} width="60" alt="" />
                     </Jumbotron>
-                    </Link>
+                  </Link>
                 </Col>
               </Row>
+              {noAdData &&
+                <Row>
+                  <Col xs="12" sm="12" md="12" lg="12" className="text-center">
+                    <Alert variant="success">
+                      There is no Ad link in your accounts
+                    </Alert>
+                  </Col>
+                </Row>
 
-              <Row>
-                {postData.map(item => (
-                  <>
-                    <Col xs="12" sm="6" md="6" lg="6">
-                      <Posts data={item} handler={deletehandler} />
-                    </Col>
-                  </>
-                ))}
-              </Row>
+              }
+              {petsData.length > 0 &&
+                <Row>
+                  <Col xs="12" sm="12" md="12" lg="12" className="text-center">
+                    <Alert variant="success">
+                      Pets
+    </Alert>
+                  </Col>
+                  {petsData.map(item => (
+                    <>
+                      <Col xs="12" sm="6" md="6" lg="6">
+                        <Posts data={item} handler={deletehandler} type="pets" />
+                      </Col>
+                    </>
+                  ))}
+                </Row>
 
+              }
+
+              {childrenData.length > 0 &&
+                <Row>
+                  <Col xs="12" sm="12" md="12" lg="12" className="text-center">
+                    <Alert variant="success">
+                      Children
+                </Alert>
+                  </Col>
+                  {childrenData.map(item => (
+                    <>
+                      <Col xs="12" sm="6" md="6" lg="6">
+                        <Posts data={item} handler={deletehandler} type="children" />
+                      </Col>
+                    </>
+                  ))}
+                </Row>
+              }
+              {eventData.length > 0 &&
+                <Row>
+                  <Col xs="12" sm="12" md="12" lg="12" className="text-center">
+                    <Alert variant="success">
+                      Event
+                </Alert>
+                  </Col>
+                  {eventData.map(item => (
+                    <>
+                      <Col xs="12" sm="6" md="6" lg="6">
+                        <Posts data={item} handler={deletehandler} type="events" />
+                      </Col>
+                    </>
+                  ))}
+                </Row>
+              }
+
+              {sportData.length > 0 &&
+                <Row>
+                  <Col xs="12" sm="12" md="12" lg="12" className="text-center">
+                    <Alert variant="success">
+                      Sport
+                </Alert>
+                  </Col>
+                  {sportData.map(item => (
+                    <>
+                      <Col xs="12" sm="6" md="6" lg="6">
+                        <Posts data={item} handler={deletehandler} type="sport" />
+                      </Col>
+                    </>
+                  ))}
+                </Row>
+              }
 
               {/* <Card className="marB">
                 <Card.Header className="d-flex">

@@ -56,7 +56,7 @@ const Header = (props) => {
             </Col>
             <Col xs={8} className="d-flex align-items-center">
                 <div className="ml-auto">
-                    <Button className="bgN" href="mailto:abc@example.com">
+                    <Button className="bgN" href="mailto:gabrieljose3135@gmail.com">
                         <img src={Emails} width="30" alt="Logo" />
                     </Button>
                     <Link to="/profile" className="mr10">

@@ -1,7 +1,6 @@
-export function updatePostData(adDetails) {
+export function updatePostData(adDetails, storageName = 'postAdData') {
     try {
         if (typeof window.localStorage != 'undefined') {
-            let storageName = 'postAdData'
             let data = JSON.parse(localStorage.getItem(storageName)) || []
             adDetails.id = Date.now()
             data.push(adDetails)
@@ -12,10 +11,9 @@ export function updatePostData(adDetails) {
     }
 }
 
-export function editPostData(dataList) {
+export function editPostData(dataList, storageName = 'postAdData') {
     try {
         if (typeof window.localStorage != 'undefined') {
-            let storageName = 'postAdData'
             localStorage.setItem(storageName, JSON.stringify(dataList))
         }
     } catch (e) {
@@ -23,10 +21,9 @@ export function editPostData(dataList) {
     }
 }
 
-export function getPostData() {
+export function getPostData(storageName = 'postAdData') {
     try {
         if (typeof window.localStorage != 'undefined') {
-            let storageName = 'postAdData'
             let data = JSON.parse(localStorage.getItem(storageName)) || []
             return data
         } else {

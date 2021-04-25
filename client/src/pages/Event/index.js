@@ -18,15 +18,15 @@ function Event() {
 
   useEffect(() => {
 
-    setPostData(getPostData())
+    setPostData(getPostData('events'))
 
   }, [])
 
 
   function deletehandler(id) {
-    let filterAd = getPostData().filter(data => data.id != id)
+    let filterAd = getPostData('events').filter(data => data.id != id)
     setPostData(filterAd)
-    editPostData(filterAd)
+    editPostData(filterAd, 'events')
 
   }
 
@@ -36,11 +36,13 @@ function Event() {
       <div className="Layout">
         <Container>
           <div className="text-center mrbt">
-          <Addbtn/>
-           
+            <Addbtn onClick={() => browserHistory.push('/postad?type=events')} />
           </div>
+          <h1 className="heading_h">
+            Events
+          </h1>
           <Row>
-          {postData.map(item => (
+            {postData.map(item => (
               <>
                 <Col xs="12" sm="4" md="4" lg="4">
                   <Posts data={item} handler={deletehandler} />

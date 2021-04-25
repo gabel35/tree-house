@@ -13,7 +13,7 @@ function EditAdd(props) {
   const location = useLocation();
   const browserHistory = useHistory()
   const [editFlag, setEditFlag] = useState(false);
-
+  const storageType = location.search.split('=').pop()
   useEffect(() => {
 
     let AdId = getUrlFromId()
@@ -42,16 +42,16 @@ function EditAdd(props) {
   }
 
   function filterAd(AdId) {
-    let adList = getPostData()
+    let adList = getPostData(storageType)
     let data = adList.filter(data => data.id == AdId)
     return data
   }
 
   function postAdSubmit() {
 
-    updatePostData(adDetails)
+    updatePostData(adDetails, storageType)
     setTimeout(() => {
-      browserHistory.push('/forum')
+      browserHistory.push(`/${storageType}`)
     }, 500)
     //after api integration call will make
     //updatePostData()
@@ -59,12 +59,12 @@ function EditAdd(props) {
   }
 
   function editAd() {
-    let adList = getPostData()
+    let adList = getPostData(storageType)
     let data = adList.filter(data => data.id != getUrlFromId())
     let finalArray = [...data, adDetails]
-    editPostData(finalArray)
+    editPostData(finalArray, storageType)
     setTimeout(() => {
-      browserHistory.push('/forum')
+      browserHistory.push(`/${storageType}`)
     }, 500)
 
   }

@@ -17,15 +17,15 @@ function Children() {
 
   useEffect(() => {
 
-    setPostData(getPostData())
+    setPostData(getPostData('children'))
 
   }, [])
 
 
   function deletehandler(id) {
-    let filterAd = getPostData().filter(data => data.id != id)
+    let filterAd = getPostData('children').filter(data => data.id != id)
     setPostData(filterAd)
-    editPostData(filterAd)
+    editPostData(filterAd, 'children')
 
   }
 
@@ -36,10 +36,13 @@ function Children() {
       <div className="Layout">
         <Container>
           <div className="text-center mrbt">
-          <Addbtn/>
+            <Addbtn variant="success" onClick={() => browserHistory.push('/postad?type=children')} />
           </div>
+          <h1 className="heading_h">
+            Children
+          </h1>
           <Row>
-          {postData.map(item => (
+            {postData.map(item => (
               <>
                 <Col xs="12" sm="4" md="4" lg="4">
                   <Posts data={item} handler={deletehandler} />

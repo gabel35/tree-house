@@ -18,15 +18,15 @@ function Football() {
 
   useEffect(() => {
 
-    setPostData(getPostData())
+    setPostData(getPostData('sport'))
 
   }, [])
 
 
   function deletehandler(id) {
-    let filterAd = getPostData().filter(data => data.id != id)
+    let filterAd = getPostData('sport').filter(data => data.id != id)
     setPostData(filterAd)
-    editPostData(filterAd)
+    editPostData(filterAd, 'sport')
 
   }
 
@@ -36,10 +36,13 @@ function Football() {
       <div className="Layout">
         <Container>
           <div className="text-center mrbt">
-          <Addbtn/>
+            <Addbtn onClick={() => browserHistory.push('/postad?type=sport')} />
           </div>
+          <h1 className="heading_h">
+            Sport
+          </h1>
           <Row>
-          {postData.map(item => (
+            {postData.map(item => (
               <>
                 <Col xs="12" sm="4" md="4" lg="4">
                   <Posts data={item} handler={deletehandler} />

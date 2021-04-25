@@ -12,37 +12,32 @@ import { Addbtn } from "../../components/Addbtn";
 function Pets() {
   const browserHistory = useHistory()
   const [postData, setPostData] = useState([]);
-
   useEffect(() => {
 
-    setPostData(getPostData())
+    setPostData(getPostData('pets'))
 
   }, [])
 
 
   function deletehandler(id) {
-    let filterAd = getPostData().filter(data => data.id != id)
+    let filterAd = getPostData('pets').filter(data => data.id != id)
     setPostData(filterAd)
-    editPostData(filterAd)
+    editPostData(filterAd, 'pets')
 
   }
+
 
   return (
     <>
       <Sidebar />
-      <div className="Layout" >
+      <div className="Layout">
         <Container>
           <div className="text-center mrbt">
-
-            {/* THIS IS ADD POST BUTTON */}
-
-            
-            {/* <Button variant="success" onClick={() => browserHistory.push('/postad')}>Add Post <img src={Add} width="15" alt="Logo" /></Button> */}
-
-            <Addbtn/>
-           
-
+            <Addbtn onClick={() => browserHistory.push('/postad?type=pets')} />
           </div>
+          <h1 className="heading_h">
+            Pets
+          </h1>
           <Row>
             {postData.map(item => (
               <>
