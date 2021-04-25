@@ -8,7 +8,7 @@ import Add from "../../assets/icons/add.svg";
 import { getPostData, editPostData } from '../../utils/Posts'
 import { useHistory } from 'react-router'
 
-function TreeHouseForum() {
+function Pets() {
   const browserHistory = useHistory()
   const [postData, setPostData] = useState([]);
   useEffect(() => {
@@ -59,4 +59,4 @@ function TreeHouseForum() {
   );
 }
 
-export default TreeHouseForum;
+export default Pets;
