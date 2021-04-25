@@ -23,22 +23,6 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build")); //double check folder names
 }
 
-//using backend routes
-app.use("/", routes);
-//using image save database/api
-// app.use(storage)
-
-// passport
-//secret session
-app.use(session({ secret: "keyboard cat",resave: true, saveUninitialized:true})); 
- 
-app.use(passport.initialize());
- 
-app.use(passport.session()); 
-
-// JWT strategy middleware
-app.use("/user", passport.authenticate("jwt", { session: false }), secureRoute);
-
 // models
 console.log("models are:", models);
 
@@ -53,7 +37,24 @@ models.User.sequelize.sync().then(function() {
 });
 
 //passport strategies
-require("./config/passport/passport.js")(passport, models.user);
+require("./config/passport/passport.js")(passport, models.User);
+
+// passport
+//secret session
+app.use(session({ secret: "keyboard cat",resave: true, saveUninitialized:true})); 
+ 
+app.use(passport.initialize());
+ 
+app.use(passport.session()); 
+
+// JWT strategy middleware
+app.use("/user", passport.authenticate("jwt", { session: false }), secureRoute);
+
+//using backend routes
+app.use("/", routes);
+//using image save database/api
+// app.use(storage)
+
 
 
 //your app is being served

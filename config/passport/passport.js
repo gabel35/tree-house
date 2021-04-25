@@ -71,7 +71,7 @@ passport.use("local-signup", new LocalStrategy(
         {
 
             const userPassword = generateHash(password);
-
+            console.log(userPassword)
             const data =
 
                 {
@@ -81,7 +81,11 @@ passport.use("local-signup", new LocalStrategy(
 
                     firstName: req.body.firstName,
 
-                    lastName: req.body.lastName
+                    lastName: req.body.lastName,
+
+                    phone: req.body.phone,
+
+                    apt: req.body.apt
 
                 };
 

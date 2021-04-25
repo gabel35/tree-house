@@ -6,9 +6,9 @@ const User = require("../../controllers/user.js");
 const Posts = require("../../controllers/posts.js")
 const db = require("../../models");
 
-router
-  .route("/signup")
-  .post(User.create);
+// router
+//   .route("/signup")
+//   .post(User.create);
 
 router
   .route("/:id")
@@ -26,7 +26,7 @@ router
   // signup endpoint
   router.post(
     "/signup",
-    passport.authenticate("signup", { session: false }),
+    passport.authenticate("local-signup", { session: false }),
     async (req, res, next) => {
       res.json({
         message: "Signup successful",
@@ -42,7 +42,7 @@ router.post(
   "/login",
   async (req, res, next) => {
     passport.authenticate(
-      "login",
+      "local-signin",
       async (err, user, info) => {
         try {
           if (err || !user) {
