@@ -11,9 +11,8 @@ Repo: [Github Repo for Vireo](https://github.com/gabel35/tree-house)
 
 # Description
 
-Vireo was created to provide information for users upon request to manage and prepare for their next trip. Users can get a descrpition of a country like the Key Phrases in native language, currency, 5 top restaurants, museums, Sightseeing Spots,Fun fact and travel restrictions during COVID-19(future development). Users can also create a post about their recent trip and read other users posts.
-<br />
-When users access the app, they should choose a country on the main page. After choosing a country, they will be given all the information. If users create a new author, they can create a post, navigate to the post page, see their posts and from other users. The post can be updated or deleted.
+The TREEHOUSE was created to help people i the neighborhood to connect in an easy and safe way. The app allows users to create an account and make posts and see others posts and contact other users. If a user has a dog, he/she can make a new post about asking if someone is available to watch the dog, while the user is out of town. If a user want to sell or looking to buy a used item, he/she also can make a post about it. If somene want to throw a party or invite kids to a Birthday party, they also can do it in a special category.
+Users also can attach a photo to their posts, edit or delete it.
 
 ## Table of Contents
 
@@ -45,10 +44,21 @@ WHEN I log in using my email and password
 <br />
 THEN I am redirected to my profile page.
 <br />
+WHEN I click on side navbar, I can navigate to different categories of the App.
+ <br />
+THEN I am given an instruction and decide which category I would like to create my post in.
+<br />
+WHEN I choose a category
+<br />
+THEN I click "add new post" and will be given a form and be able to post it on the app.
+<br />
+WHEN I want to see other's listings I can switch between categories and also click on it to send an email to an author.
+<br />
+THEN I will be redirected to email.
+<br />
+WHEN I want to see all of my posts, I can to go my profile page and edit or delete them there. 
+<br />
 
-WHEN I select a button to navigate to blog <br />
-THEN I am given an option to create a new author and post my thoughts about recent trip.<br />
-WHEN I want to edit or delete my post I can do it from the authors table.
 
 ## Installation
 
@@ -56,32 +66,36 @@ WHEN I want to edit or delete my post I can do it from the authors table.
 
 ## Usage
 
-Application will be invoked by using the `node server.js` command in the terminal. Open `https://localhost:8080` in your browser.
+Application will be invoked by using the `npm start` command in the terminal. Open `https://localhost:3000` in your browser.
 
 # Screenshots
 
-![Vireo](./public/assets/img/vireo_screenshot.PNG)
+! NEEDS A SCREENSHOT
 
 # Packages, APIs, and Technologies:
 
-For this project we used:
+Technologies we used for the project:
 
+- react-dom
+- react-icons
+- react-images-uploading
 - Sequalize
-- MySQL
+- MySQL12
 - express
-- express-handlebars
-
-- Bootstrap
-- FontAwesome
-- Google Fonts
+- express-session
+- axios
+- bcrypt-nodejs
+- jsonwebtoken
+- passport
+ 
 
 # APIs:
 
-[restcountries](https://restcountries.eu/#api-endpoints-language) (for currency)
-[TravelAdvice API](https://traveladviceapi.com/) (for travel restrictions)
 
 # Division:
 
-- Jonathan - Back-end - @jongomezdev
-- Gabriel - Back & Front-end - @Gabel35
-- Kristina- Front-end and Presentation- @kiankovskaia
+
+- Jacquelin - Back-end - @jacquelinerodney
+- Gabriel - Back-end - @Gabel35
+- Kristina- Front-end - @kiankovskaia
+- Jude - Front-end - @Jude626
