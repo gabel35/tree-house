@@ -94,9 +94,7 @@ function AddPost() {
                 <ListGroup.Item><b>Name : </b> Gabriel J. Sanchez</ListGroup.Item>
                 <ListGroup.Item><b>Phone : </b> 973 573 4431</ListGroup.Item>
                 <ListGroup.Item><b>Email : </b> abc@example.com</ListGroup.Item>
-                <ListGroup.Item><b>Details : </b> With supporting text below as a natural lead-in to additional content.</ListGroup.Item>
-                <ListGroup.Item><b>Details 2 : </b> With supporting text below as a natural lead-in to additional content.</ListGroup.Item>
-                <ListGroup.Item><b>Details 3 : </b> With supporting text below as a natural lead-in to additional content.</ListGroup.Item>
+                <ListGroup.Item><b>Apartment : </b> 1S</ListGroup.Item>
               </ListGroup>
             </Col>
             <Col xs="12" sm="8" md="8" lg="8">
