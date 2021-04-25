@@ -1,25 +1,26 @@
+const env = require("dotenv");
 const express = require("express");
 const path = require("path");
-const PORT = process.env.PORT || 3001;
-const app = express();
+const routes = require("./routes");
 const secureRoute = require("./routes/api/secure-routes");
+const app = express();
 const passport = require("passport");
 const session = require("express-session");
-const bodyParser = require("body-parser");
-const env = require("dotenv");
-const routes = require("./routes");
+// const bodyParser = require("body-parser");
 const models = require("./models");
 const sequelize = require("./config/config.js");
 // const storage = require("./db/storage.js")
+const PORT = process.env.PORT || 3001;
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.urlencoded({ extended: false }));
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("./client/public/")); //double check folder names
+  app.use(express.static("client/build")); //double check folder names
 }
 
 //using backend routes
