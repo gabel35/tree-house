@@ -29,10 +29,10 @@ function Pets() {
           <h4 className="heading_h">
             In this category you can make posts which are related to pets ONLY.
           </h4>
-          <p>
+          <h5>
             e.g.post here if you would like to find someone to take care of your
             pet.{" "}
-          </p>
+          </h5>
 
           <div className="text-center mrbt">
             <Addbtn onClick={() => browserHistory.push("/postad?type=pets")} />

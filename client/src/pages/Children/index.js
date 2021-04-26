@@ -32,10 +32,10 @@ function Children() {
           <h4 className="heading_h">
             In this category you can make posts related to children ONLY.
           </h4>
-          <p>
+          <h5>
           e.g. post here if you would like to invide neighborhood kids
             for a Birthday party og ypur child.{" "}
-          </p>
+          </h5>
           <div className="text-center mrbt">
             <Addbtn
               variant="success"

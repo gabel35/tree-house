@@ -33,9 +33,9 @@ function Event() {
         <h4 className="heading_h">
             In this category you can make posts about events you are hosting ONLY.
           </h4>
-          <p>
+          <h5>
           e.g. post here if you would like to invite your nehgbors  to night boat cruise party.{" "}
-          </p>
+          </h5>
           <div className="text-center mrbt">
             <Addbtn
               onClick={() => browserHistory.push("/postad?type=events")}
