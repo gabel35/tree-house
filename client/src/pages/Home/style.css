@@ -1,6 +1,8 @@
 
 /* home page style */
 
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
 html {
     height:100%;
   }
@@ -10,8 +12,14 @@ html {
   }
   
   h1 {
-    font-family:monospace;
+    font-family: 'Space Mono', monospace;
     text-align: center;
+  }
+  h2{
+    font-family: 'Space Mono', monospace;
+    text-align: center;
+    font-size: 20px;
+    margin: 15px;
   }
   .content_box .logo {
     text-align: center;
@@ -28,3 +36,12 @@ html {
    width: 33.3333%;
    padding: 0px 10px;
  }
+ .col-centered{
+  float: none;
+  margin: 0 auto;
+}
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

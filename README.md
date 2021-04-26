@@ -7,7 +7,7 @@ The TREEHOUSE app allows users to connect in a safer way with people in their ap
 
 Deployed at: [Treehouse on Heroku](https://tree-house-app.herokuapp.com/)
 
-Repo: [Github Repo for Vireo](https://github.com/gabel35/tree-house)
+Repo: [Github Repo for Treehouse](https://github.com/gabel35/tree-house)
 
 # Description
 
