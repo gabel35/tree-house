@@ -1,29 +1,101 @@
-# Create React Express App
+# Project_3
 
-## About This Boilerplate
+# TREEHOUSE_app
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+The TREEHOUSE app allows users to connect in a safer way with people in their apartment buildings/complex//neighborhood.
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
 
-## Starting the app locally
+Deployed at: [Vireo on Heroku](https://tree-house-app.herokuapp.com/)
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+Repo: [Github Repo for Vireo](https://github.com/gabel35/tree-house)
 
-```
-npm install
-```
+# Description
 
-This should install node modules within the server and the client folder.
+The TREEHOUSE was created to help people i the neighborhood to connect in an easy and safe way. The app allows users to create an account and make posts and see others posts and contact other users. If a user has a dog, he/she can make a new post about asking if someone is available to watch the dog, while the user is out of town. If a user want to sell or looking to buy a used item, he/she also can make a post about it. If somene want to throw a party or invite kids to a Birthday party, they also can do it in a special category.
+Users also can attach a photo to their posts, edit or delete it.
 
-After both installations complete, run the following command in your terminal:
+## Table of Contents
 
-```
-npm start
-```
+- [User-Story](#User-Story)
+- [Functionality](#Functionality)
+- [Installation](#Installation)
+- [Usage](#usage)
+- [Screenshots](#Screenshots)
+- [APIs](#APIs)
+- [Division](#Division)
 
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
+# User-Story
+<br />
+GIVEN that I would like to meet new people in my neighborhood.
+<br />
+AS a user who just moved to a new city/neighborhood I want to connect with new people and make new friends.
+<br />
+I WANT to connect with people with similar interests and/or needs. 
+<br />
+SO THAT I can make posts about upcoming events, asking for a favor or offering my help.
+<br />
 
-## Deployment (Heroku)
+# Functionality
 
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+WHEN I open the App I can create a new account
+<br />
+THEN I am given a promt to provide information about myself to verify I am a resident <br />
+WHEN I log in using my email and password
+<br />
+THEN I am redirected to my profile page.
+<br />
+WHEN I click on side navbar, I can navigate to different categories of the App.
+ <br />
+THEN I am given an instruction and decide which category I would like to create my post in.
+<br />
+WHEN I choose a category
+<br />
+THEN I click "add new post" and will be given a form and be able to post it on the app.
+<br />
+WHEN I want to see other's listings I can switch between categories and also click on it to send an email to an author.
+<br />
+THEN I will be redirected to email.
+<br />
+WHEN I want to see all of my posts, I can to go my profile page and edit or delete them there. 
+<br />
+
+
+## Installation
+
+1. Clone the repo and run `npm install` for the required dependencies. Run `npm start seed` in order to seed the database.
+
+## Usage
+
+Application will be invoked by using the `npm start` command in the terminal. Open `https://localhost:3000` in your browser.
+
+# Screenshots
+
+! NEEDS A SCREENSHOT
+
+# Packages, APIs, and Technologies:
+
+Technologies we used for the project:
+
+- react-dom
+- react-icons
+- react-images-uploading
+- Sequalize
+- MySQL12
+- express
+- express-session
+- axios
+- bcrypt-nodejs
+- jsonwebtoken
+- passport
+ 
+
+# APIs:
+
+
+# Division:
+
+
+- Jacquelin - Back-end - @jacquelinerodney
+- Gabriel - Back-end - @Gabel35
+- Kristina- Front-end - @kiankovskaia
+- Jude - Front-end - @Jude626
