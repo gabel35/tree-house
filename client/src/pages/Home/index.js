@@ -11,23 +11,23 @@ function Home() {
       <div className="bg bg3"></div>
       <div className="App">
         <div class="content_box">
-          <div>
             <h1>WELCOME TO</h1>
             <div className="logo">
               <img src={Logo} alt="Logo" />
             </div>
+            <div className="HomeButton center">
+              <Link to="/login">
+                <button className="homepage-btn">
+                  <span>Log In</span>
+                </button>
+              </Link>
+              <Link to="/signup">
+                <button className="homepage-btn">
+                  <span>Sign Up</span>
+                </button>
+              </Link>
           </div>
-          <div className="HomeButton">
-            <Link to="/login">
-              <button className="homepage-btn"><span>Log In</span></button>
-            </Link>
-            <Link to="/signup">
-              <button className="homepage-btn"><span>Sign Up</span></button>
-            </Link>
-            {/* <Link to="/pets">
-              <button className="homepage-btn"><span>Forum</span></button>
-            </Link> */}
-          </div>
+          <h2>connect with your neighborhood</h2>
         </div>
       </div>
     </div>

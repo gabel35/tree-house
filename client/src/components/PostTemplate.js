@@ -20,7 +20,7 @@ const PostTemplate = (props) => {
         <Card.Text>
           {description}
         </Card.Text>
-        <h5 className="postedby">posted by {name}</h5>
+        <h6 className="postedby">posted by {name}</h6>
         {type &&
           <Row>
             <Col xs={6} sm={6} md={6}>
