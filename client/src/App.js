@@ -10,6 +10,7 @@ import Children from './pages/Children';
 import Event from './pages/Event';
 import Football from './pages/Football';
 import EditAdd from './pages/EditAdd';
+import Support from './pages/Support/index';
 import "./App.css";
 
 function App(props) {
@@ -42,6 +43,9 @@ function App(props) {
         </Route>
         <Route path='/postad' {...props}>
           <EditAdd title={'Post AD'} />
+        </Route>
+        <Route path='/support'>
+          <Support />
         </Route>
         <Route path='/'>
           <Home />
