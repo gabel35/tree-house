@@ -39,30 +39,22 @@ const PostTemplate = (props) => {
         {type &&
           <Row>
             <Col xs={6} sm={6} md={6}>
-              <Button variant="light" onClick={() => editAddHandler(id, type)}>
-                Edit
-              </Button>
+              <Button variant="info" onClick={() => editAddHandler(id, type)}>Edit</Button>
             </Col>
             <Col xs={6} sm={6} md={6} className="text-right">
-              <Button variant="light" onClick={() => handler(id, type)}>
-                Delete
-              </Button>
+              <Button variant="danger" onClick={() => handler(id, type)}>Delete</Button>
             </Col>
           </Row>
-        )}
-        {!type && (
+        }
+        {!type &&
           <Row>
             <Col xs={12} sm={12} md={12} className="text-center">
-              <Button 
-                 variant="info" 
-                 className="hoverbtb logoutbtn msgbtn" 
-                 href="mailto:gabrieljose3135@gmail.com"
-               >
+              <Button variant="info" className="hoverbtb logoutbtn" href="mailto:gabrieljose3135@gmail.com">
                   Message
               </Button>
             </Col>
           </Row>
-        )}
+        }
       </Card.Body>
     </Card>
   );
