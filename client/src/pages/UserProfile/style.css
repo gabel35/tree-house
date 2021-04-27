@@ -39,12 +39,8 @@ html {
   background-color: #52734d;
  }
 
-
- .jumbo-icon, .jumbortron{
-
-padding:5px !important;
-
-
+ .jumbo-icon, .jumbotron{
+    padding:5px !important;
  }
 
  .jumbo-icon a {
