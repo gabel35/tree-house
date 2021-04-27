@@ -4,21 +4,16 @@ import {
   Row,
   Col,
   Jumbotron,
-  Card,
-  Button,
-  Badge,
   ListGroup,
   Alert,
-} from "react-bootstrap";
+} 
+from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./style.css";
 import Sidebar from "../../components/Sidebar";
 import Footer from "../../components/Footer";
 import * as BiIcons from "react-icons/bi";
-import * as IoIcons from "react-icons/io";
 import * as MdIcons from "react-icons/md";
-import * as ImIcons from "react-icons/im";
-
 import Profile from "../../assets/images/profile.png";
 import Posts from "../../components/PostTemplate";
 import API from "../../utils/API";
