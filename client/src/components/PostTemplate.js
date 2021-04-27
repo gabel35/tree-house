@@ -1,28 +1,42 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Card, Button, Row, Col } from "react-bootstrap";
-import { useHistory } from "react-router";
-
+import { useHistory } from 'react-router'
+import { getPostData } from '../../src/utils/Posts'
 const PostTemplate = (props) => {
-  const {
-    data: { images, alt, title, description, deployedUrl, repo, name, id },
-    handler,
-    type,
+  const { 
+    data: { img, alt, title, description, deployedUrl, repo, name, id, imageUrl }, 
+    handler, 
+    type 
   } = props || {};
-  const browserHistory = useHistory();
+  const browserHistory = useHistory()
+  const [getData, setData] = useState({})
 
   function editAddHandler(id, type) {
     console.log(props);
     let url = `/edit-add/${id}?type=${type}`;
     browserHistory.push(url);
   }
+  useEffect(() => {
+    let data = getPostData('userTabel')
+    if (data) {
+      setData(data[0])
+    }
+
+
+  }, [])
+
   return (
     <Card>
-      <Card.Img variant="top" src={images} />
+      <Card.Img variant="top" src={imageUrl && imageUrl[0] && imageUrl[0].data_url} />
       <Card.Body>
         <Card.Title>{title}</Card.Title>
-        <Card.Text>{description}</Card.Text>
-        <h6 className="postedby">posted by {name}</h6>
-        {type && (
+        <Card.Text>
+          {description}
+        </Card.Text>
+        {getData && getData.firstName && getData.firstName &&
+          <h5 className="postedby">posted by {getData.firstName + ' ' + getData.lastName}</h5>
+        }
+        {type &&
           <Row>
             <Col xs={6} sm={6} md={6}>
               <Button variant="light" onClick={() => editAddHandler(id, type)}>
@@ -39,12 +53,12 @@ const PostTemplate = (props) => {
         {!type && (
           <Row>
             <Col xs={12} sm={12} md={12} className="text-center">
-              <Button
-                variant="info"
-                className="hoverbtb logoutbtn msgbtn"
-                href="mailto:abc@example.com"
-              >
-                Message
+              <Button 
+                 variant="info" 
+                 className="hoverbtb logoutbtn msgbtn" 
+                 href="mailto:gabrieljose3135@gmail.com"
+               >
+                  Message
               </Button>
             </Col>
           </Row>

@@ -6,10 +6,11 @@ import { useLocation, useHistory } from "react-router";
 import DragImage from "./DragImage";
 
 function EditAdd(props) {
-  const [adDetails, setAdDetails] = useState({
-    title: "",
-    name: "",
-    description: "",
+  const [adDetails, setAdDetails] = useState({ 
+    title: "", 
+    name: "", 
+    description: "", 
+    image: '' 
   });
   const location = useLocation();
   const browserHistory = useHistory();
@@ -50,6 +51,14 @@ function EditAdd(props) {
     //updatePostData()
   }
 
+  function ImageUploadCallback(image) {
+    // const base64String = image[0].data_url.replace('data:', '').replace(/^.+,/, '');
+    setAdDetails({
+      ...adDetails,
+      imageUrl: image
+    })
+  }
+
   function editAd() {
     let adList = getPostData(storageType);
     let data = adList.filter((data) => data.id != getUrlFromId());
@@ -65,13 +74,7 @@ function EditAdd(props) {
       <div className="form-inner">
         <h2>{props.title}</h2>
         <Form.Group>
-          <DragImage
-            name="image"
-            value={adDetails.image}
-            onChange={(e) =>
-              setAdDetails({ ...adDetails, image: e.target.value })
-            }
-          />
+          <DragImage image={adDetails.imageUrl} handler={ImageUploadCallback} />
         </Form.Group>
         <Form.Group>
           <Form.Control
@@ -84,17 +87,17 @@ function EditAdd(props) {
             }
           />
         </Form.Group>
-        <Form.Group>
-          <Form.Control
-            type="text"
-            name="name"
-            placeholder="Enter Name"
-            value={adDetails.name}
-            onChange={(e) =>
-              setAdDetails({ ...adDetails, name: e.target.value })
-            }
-          />
-        </Form.Group>
+//         <Form.Group>
+//           <Form.Control
+//             type="text"
+//             name="name"
+//             placeholder="Enter Name"
+//             value={adDetails.name}
+//             onChange={(e) =>
+//               setAdDetails({ ...adDetails, name: e.target.value })
+//             }
+//           />
+//         </Form.Group>
         <Form.Group>
           <Form.Control
             as="textarea"

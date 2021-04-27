@@ -34,8 +34,6 @@ function App(props) {
         <Route path='/pets'>
           <Pets />
         </Route>
-        <Route path='/post'>
-        </Route>
         <Route path='/profile'>
           <UserProfile />
         </Route>
