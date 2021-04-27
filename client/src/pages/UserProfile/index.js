@@ -107,7 +107,7 @@ function AddPost() {
                   <b>Phone : </b> 973 573 4431 {user.phone}
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <b>Email : </b> gabrieljose3135@gmail.com {user.email)}
+                  <b>Email : </b> gabrieljose3135@gmail.com {user.email}
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <b>Apartment : </b> 1S {user.apt}
