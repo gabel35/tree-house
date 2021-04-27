@@ -27,15 +27,18 @@ import { getPostData, editPostData } from "../../utils/Posts";
 function AddPost() {
   const [user, setUser] = useState([]);
 
+  
+  const emailID = localStorage.getItem("email")
+
   useEffect(() => {
     loadUser();
   }, []);
 
   function loadUser() {
-    API.getUser()
-      .then((res) => {
-        console.log(res);
-        setUser(res);
+    API.getUser({email: emailID})
+      .then(res => {
+        console.log(res)
+        setUser(res)
       })
       .catch((err) => console.log(err));
   }
@@ -98,16 +101,16 @@ function AddPost() {
               </div>
               <ListGroup variant="flush">
                 <ListGroup.Item>
-                  <b>Name : </b> Gabriel J. Sanchez
+                  <b>Name : </b> Gabriel Sanchez {user.firstName} {user.lastName}
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <b>Phone : </b> 973 573 4431
+                  <b>Phone : </b> 973 573 4431 {user.phone}
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <b>Email : </b> gabrieljose3135@gmail.com
+                  <b>Email : </b> gabrieljose3135@gmail.com {user.email}
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <b>Apartment : </b> 1S
+                  <b>Apartment : </b> 1S {user.apt}
                 </ListGroup.Item>
               </ListGroup>
             </Col>

@@ -16,7 +16,6 @@ function SignUp() {
     function handleFormSubmit(event) {
         event.preventDefault();
         if (user.firstName && user.lastName && user.phone && user.email && user.apt && user.password) {
-            console.log("frontest-end user", user)
             console.log("Account created")
             API.saveUser(user)
             .catch(err => console.log(err));

@@ -78,7 +78,7 @@ function EditAdd(props) {
       <div className="form-inner">
         <h2>{props.title}</h2>
         <Form.Group>
-          <DragImage />
+          <DragImage name="image" value={adDetails.image} onChange={e => setAdDetails({ ...adDetails, image: e.target.value })}/>
         </Form.Group>
         <Form.Group>
           <Form.Control type="text" name="title" placeholder="Enter Ad Title" value={adDetails.title} onChange={e => setAdDetails({ ...adDetails, title: e.target.value })} />
@@ -92,7 +92,7 @@ function EditAdd(props) {
         <Form.Group>
           <div className="homepage-btn">
             <span>
-              <input type="submit" value="SAVE" onClick={editFlag ? editAd : postAdSubmit} />
+              <input type="submit" value="POST" onClick={editFlag ? editAd : postAdSubmit} />
             </span>
           </div>
         </Form.Group>

@@ -3,7 +3,7 @@ import { Card, Button, Row, Col } from "react-bootstrap";
 import { useHistory } from 'react-router'
 
 const PostTemplate = (props) => {
-  const { data: { img, alt, title, description, deployedUrl, repo, name, id }, handler, type } = props || {};
+  const { data: { images, alt, title, description, deployedUrl, repo, name, id }, handler, type } = props || {};
   const browserHistory = useHistory()
 
   function editAddHandler(id, type) {
@@ -14,7 +14,7 @@ const PostTemplate = (props) => {
   }
   return (
     <Card>
-      <Card.Img variant="top" src="https://images.squarespace-cdn.com/content/v1/5b72432336099b076a55f038/1596240897997-0PCTCDFWSA7IAN554PGZ/ke17ZwdGBToddI8pDm48kLue6M7bjRoDm4ngETiAUll7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UbX0kVSBOaiAPmQOaCV_okilAZ2V09ysmDG9gGf1pgEmhkNt8GyT_TyPg6j8ik9Tkw/Maltipoo+Puppies+2020+Small-19.jpg" />
+      <Card.Img variant="top" src={images} />
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text>
@@ -34,7 +34,7 @@ const PostTemplate = (props) => {
         {!type &&
           <Row>
             <Col xs={12} sm={12} md={12} className="text-center">
-              <Button variant="info" className="bgN hoverbtb" href="mailto:abc@example.com">
+              <Button variant="info" className="hoverbtb logoutbtn" href="mailto:abc@example.com">
                   Message
               </Button>
             </Col>

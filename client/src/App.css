@@ -214,4 +214,7 @@ a.hoverbtb:hover {
     rgba(224, 244, 157, 0.19933184455422792) 100%
   );
 }
-
+.logoutbtn {
+  background-color: #0B3010;
+  border: none;
+}

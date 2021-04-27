@@ -11,7 +11,7 @@ const db = require("../../models");
 //   .post(User.create);
 
 router
-  .route("/:id")
+  .route("/profile")
   .get(User.findById)
 
 router
