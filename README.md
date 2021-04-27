@@ -87,6 +87,7 @@ Technologies we used for the project:
 - bcrypt-nodejs
 - jsonwebtoken
 - passport
+- http-proxy-middleware
  
 
 # APIs:
