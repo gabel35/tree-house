@@ -31,7 +31,7 @@ function Event() {
             In this category you can make posts about events you are hosting ONLY.
           </h4>
           <h5>
-          e.g. post here if you would like to invite your nehgbors  to night boat cruise party.{" "}
+          e.g. invite your nehgbors to a night boat party cruise .{" "}
           </h5>
           <div className="text-center mrbt">
             <Addbtn

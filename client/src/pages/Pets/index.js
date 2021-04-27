@@ -30,7 +30,7 @@ function Pets() {
             In this category you can make posts which are related to pets ONLY.
           </h4>
           <h5>
-            e.g.post here if you would like to find someone to take care of your
+            e.g. if you would like to find someone to take care of your
             pet.{" "}
           </h5>
 

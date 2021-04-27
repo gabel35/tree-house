@@ -37,7 +37,7 @@ function Football() {
             In this category you can make posts about sport activities and games ONLY.
           </h4>
           <h5>
-          e.g. post here if you would like to invite a group of people to watch a football game together.{" "}
+          e.g. invite a group of people to watch a football game together.{" "}
           </h5>
           <div className="text-center mrbt">
             <Addbtn onClick={() => browserHistory.push('/postad?type=sport')} />

@@ -31,8 +31,7 @@ function Children() {
             In this category you can make posts related to children ONLY.
           </h4>
           <h5>
-          e.g. post here if you would like to invide neighborhood kids
-            for a Birthday party og ypur child.{" "}
+          e.g. invite neighborhood kids to your child's birthday{" "}
           </h5>
           <div className="text-center mrbt">
             <Addbtn
