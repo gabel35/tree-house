@@ -10,7 +10,7 @@ function Home() {
       <div className="bg bg2"></div>
       <div className="bg bg3"></div>
       <div className="App">
-        <div class="content_box">
+        <div className="content_box">
             <h1>WELCOME TO</h1>
             <div className="logo">
               <img src={Logo} alt="Logo" />
