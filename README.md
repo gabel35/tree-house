@@ -11,7 +11,7 @@ Repo: [Github Repo for Treehouse](https://github.com/gabel35/tree-house)
 
 # Description
 
-The TREEHOUSE was created to help people i the neighborhood to connect in an easy and safe way. The app allows users to create an account and make posts and see others posts and contact other users. If a user has a dog, he/she can make a new post about asking if someone is available to watch the dog, while the user is out of town. If a user want to sell or looking to buy a used item, he/she also can make a post about it. If somene want to throw a party or invite kids to a Birthday party, they also can do it in a special category.
+The TREEHOUSE was created to help people in the neighborhood to connect in an easy and safe way. The app allows users to create an account and make posts and see others' posts and contact other users. If a user has a dog, they can make a new post asking if someone is available to watch the dog, while the user is out of town. If a user wants to sell or is looking to buy a used item, they also can make a post about it. If somene want to throw a party or invite kids to a Birthday party, they also can do it in a special category.
 Users also can attach a photo to their posts, edit or delete it.
 
 ## Table of Contents
@@ -70,7 +70,10 @@ Application will be invoked by using the `npm start` command in the terminal. Op
 
 # Screenshots
 
-! NEEDS A SCREENSHOT
+![Tree-house Home Screenshot](./client/src/assets/screenshots/treehouse_screenshot.PNG)
+![Tree-house Login Screenshot](./client/src/assets/screenshots/treehouse_login.PNG)
+![Tree-house Profile Screenshot](./client/src/assets/screenshots/treehouse_profile.PNG)
+![Tree-house Forum Screenshot](./client/src/assets/screenshots/treehouse_forum.PNG)
 
 # Packages, APIs, and Technologies:
 

@@ -21,13 +21,13 @@ function LoginForm() {
     localStorage.setItem("email", user.email);
   }
 
-  function handleFormSubmit(event) {
-    event.preventDefault();
-    if (user.email && user.password) {
-      // console.log("Account created")
-      API.login(user).catch((err) => console.log(err));
-    }
-  }
+  // function handleFormSubmit(event) {
+  //   event.preventDefault();
+  //   if (user.email && user.password) {
+  //     // console.log("Account created")
+  //     API.login(user).catch((err) => console.log(err));
+  //   }
+  // }
 
   return (
     <Form className="LoginFormBox">

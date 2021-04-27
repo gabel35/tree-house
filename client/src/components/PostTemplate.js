@@ -39,10 +39,10 @@ const PostTemplate = (props) => {
         {type &&
           <Row>
             <Col xs={6} sm={6} md={6}>
-              <Button variant="info" onClick={() => editAddHandler(id, type)}>Edit</Button>
+              <Button variant="light" onClick={() => editAddHandler(id, type)}>Edit</Button>
             </Col>
             <Col xs={6} sm={6} md={6} className="text-right">
-              <Button variant="danger" onClick={() => handler(id, type)}>Delete</Button>
+              <Button variant="light" onClick={() => handler(id, type)}>Delete</Button>
             </Col>
           </Row>
         }
