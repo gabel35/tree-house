@@ -5,7 +5,6 @@ import Home from './pages/Home/index';
 import Login from './pages/Login/index';
 import SignUp from './pages/SignUp/index';
 import Pets from './pages/Pets';
-import AddPost from './pages/AddPost';
 import UserProfile from './pages/UserProfile';
 import "./App.css";
 import Children from './pages/Children';
@@ -34,9 +33,6 @@ function App(props) {
         </Route>
         <Route path='/pets'>
           <Pets />
-        </Route>
-        <Route path='/post'>
-          <AddPost />
         </Route>
         <Route path='/profile'>
           <UserProfile />

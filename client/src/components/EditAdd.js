@@ -9,7 +9,7 @@ import DragImage from './DragImage';
 
 function EditAdd(props) {
 
-  const [adDetails, setAdDetails] = useState({ title: "", name: "", description: "" });
+  const [adDetails, setAdDetails] = useState({ title: "", name: "", description: "", image: '' });
   const location = useLocation();
   const browserHistory = useHistory()
   const [editFlag, setEditFlag] = useState(false);
@@ -58,6 +58,14 @@ function EditAdd(props) {
 
   }
 
+  function ImageUploadCallback(image) {
+    // const base64String = image[0].data_url.replace('data:', '').replace(/^.+,/, '');
+    setAdDetails({
+      ...adDetails,
+      imageUrl: image
+    })
+  }
+
   function editAd() {
     let adList = getPostData(storageType)
     let data = adList.filter(data => data.id != getUrlFromId())
@@ -78,14 +86,14 @@ function EditAdd(props) {
       <div className="form-inner">
         <h2>{props.title}</h2>
         <Form.Group>
-          <DragImage />
+          <DragImage image={adDetails.imageUrl} handler={ImageUploadCallback} />
         </Form.Group>
         <Form.Group>
           <Form.Control type="text" name="title" placeholder="Enter Ad Title" value={adDetails.title} onChange={e => setAdDetails({ ...adDetails, title: e.target.value })} />
         </Form.Group>
-        <Form.Group>
+        {/* <Form.Group>
           <Form.Control type="text" name="name" placeholder="Enter Name" value={adDetails.name} onChange={e => setAdDetails({ ...adDetails, name: e.target.value })} />
-        </Form.Group>
+        </Form.Group> */}
         <Form.Group>
           <Form.Control as="textarea" rows={3} name="desc" placeholder="Enter Ad description" value={adDetails.description} onChange={e => setAdDetails({ ...adDetails, description: e.target.value })} />
         </Form.Group>

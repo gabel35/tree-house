@@ -1,26 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Card, Button, Row, Col } from "react-bootstrap";
 import { useHistory } from 'react-router'
-
+import { getPostData } from '../../src/utils/Posts'
 const PostTemplate = (props) => {
-  const { data: { img, alt, title, description, deployedUrl, repo, name, id }, handler, type } = props || {};
+  const { data: { img, alt, title, description, deployedUrl, repo, name, id, imageUrl }, handler, type } = props || {};
   const browserHistory = useHistory()
-
+  const [getData, setData] = useState({})
   function editAddHandler(id, type) {
     console.log(props)
     let url = `/edit-add/${id}?type=${type}`
     browserHistory.push(url)
 
   }
+  useEffect(() => {
+    let data = getPostData('userTabel')
+    if (data) {
+      setData(data[0])
+    }
+
+
+  }, [])
+
   return (
     <Card>
-      <Card.Img variant="top" src="https://images.squarespace-cdn.com/content/v1/5b72432336099b076a55f038/1596240897997-0PCTCDFWSA7IAN554PGZ/ke17ZwdGBToddI8pDm48kLue6M7bjRoDm4ngETiAUll7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UbX0kVSBOaiAPmQOaCV_okilAZ2V09ysmDG9gGf1pgEmhkNt8GyT_TyPg6j8ik9Tkw/Maltipoo+Puppies+2020+Small-19.jpg" />
+      <Card.Img variant="top" src={imageUrl && imageUrl[0] && imageUrl[0].data_url} />
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text>
           {description}
         </Card.Text>
-        <h5 className="postedby">posted by {name}</h5>
+        {getData && getData.firstName && getData.firstName &&
+          <h5 className="postedby">posted by {getData.firstName + ' ' + getData.lastName}</h5>
+        }
+
+
         {type &&
           <Row>
             <Col xs={6} sm={6} md={6}>
@@ -35,7 +48,7 @@ const PostTemplate = (props) => {
           <Row>
             <Col xs={12} sm={12} md={12} className="text-center">
               <Button variant="info" className="bgN hoverbtb" href="mailto:abc@example.com">
-                  Message
+                Message
               </Button>
             </Col>
           </Row>

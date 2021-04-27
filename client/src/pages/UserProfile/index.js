@@ -11,7 +11,6 @@ import Birthday from "../../assets/icons/birthday-cake.svg";
 import Profile from "../../assets/images/profile.png";
 import Posts from "../../components/PostTemplate";
 import API from "../../utils/API";
-
 import { getPostData, editPostData } from '../../utils/Posts'
 
 function AddPost() {
@@ -20,6 +19,12 @@ function AddPost() {
 
   useEffect(() => {
     loadUser()
+    // temp added
+    let data = getPostData('userTabel')
+    if (data) {
+      setUser(data[0])
+    }
+
   }, [])
 
   function loadUser() {
@@ -55,8 +60,6 @@ function AddPost() {
 
   }, [petsData, childrenData, eventData, sportData])
 
-
-
   function deletehandler(id, type) {
     let filterAd = getPostData(type).filter(data => data.id != id)
     editPostData(filterAd, type)
@@ -77,9 +80,6 @@ function AddPost() {
     }
 
   }
-
-
-
   return (
     <>
       <Sidebar />
@@ -90,12 +90,16 @@ function AddPost() {
               <div className="profileimg">
                 <img src={Profile} width="100%" alt="" />
               </div>
-              <ListGroup variant="flush">
-                <ListGroup.Item><b>Name : </b> Gabriel J. Sanchez</ListGroup.Item>
-                <ListGroup.Item><b>Phone : </b> 973 573 4431</ListGroup.Item>
-                <ListGroup.Item><b>Email : </b> gabrieljose3135@gmail.com</ListGroup.Item>
-                <ListGroup.Item><b>Apartment : </b> 1S</ListGroup.Item>
-              </ListGroup>
+              {user && user.email &&
+
+                <ListGroup variant="flush">
+                  <ListGroup.Item><b>Name : </b> {user.firstName + ' ' + user.lastName}</ListGroup.Item>
+                  <ListGroup.Item><b>Phone : </b> {user.phone}</ListGroup.Item>
+                  <ListGroup.Item><b>Email : </b> {user.email}</ListGroup.Item>
+                  <ListGroup.Item><b>Apartment : </b> {user.apt}</ListGroup.Item>
+                </ListGroup>
+              }
+
             </Col>
             <Col xs="12" sm="8" md="8" lg="8">
               <Row>

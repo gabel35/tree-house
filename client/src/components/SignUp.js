@@ -1,8 +1,9 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { Form } from 'react-bootstrap';
 import API from '../utils/API'
 import './LoginForm.css';
+import { updatePostData } from '../../../client/src/utils/Posts'
 
 function SignUp() {
 
@@ -10,7 +11,7 @@ function SignUp() {
 
     function handleInputChange(event) {
         const { name, value } = event.target;
-        setUser({...user, [name]: value})
+        setUser({ ...user, [name]: value })
     };
 
     function handleFormSubmit(event) {
@@ -18,8 +19,9 @@ function SignUp() {
         if (user.firstName && user.lastName && user.phone && user.email && user.apt && user.password) {
             console.log("frontest-end user", user)
             console.log("Account created")
+            updatePostData(user, 'userTabel')
             API.saveUser(user)
-            .catch(err => console.log(err));
+                .catch(err => console.log(err));
         }
     };
 
@@ -45,10 +47,10 @@ function SignUp() {
                     <Form.Control as="textarea" rows={3} name="apt" placeholder="Enter Apartment" onChange={handleInputChange} />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Control type="password"  name="password" id="password" placeholder="Enter Password" onChange={handleInputChange} />
+                    <Form.Control type="password" name="password" id="password" placeholder="Enter Password" onChange={handleInputChange} />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Control type="password"  name="confirmPassword" id="confirmPassword" placeholder="Enter Password Again" />
+                    <Form.Control type="password" name="confirmPassword" id="confirmPassword" placeholder="Enter Password Again" />
                 </Form.Group>
                 <Form.Group>
                     <Link to="/login">
