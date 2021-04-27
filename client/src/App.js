@@ -6,11 +6,11 @@ import Login from './pages/Login/index';
 import SignUp from './pages/SignUp/index';
 import Pets from './pages/Pets';
 import UserProfile from './pages/UserProfile';
-import "./App.css";
 import Children from './pages/Children';
 import Event from './pages/Event';
 import Football from './pages/Football';
 import EditAdd from './pages/EditAdd';
+import "./App.css";
 
 function App(props) {
   return (

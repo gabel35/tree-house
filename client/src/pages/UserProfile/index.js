@@ -4,21 +4,16 @@ import {
   Row,
   Col,
   Jumbotron,
-  Card,
-  Button,
-  Badge,
   ListGroup,
   Alert,
-} from "react-bootstrap";
+} 
+from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./style.css";
 import Sidebar from "../../components/Sidebar";
 import Footer from "../../components/Footer";
 import * as BiIcons from "react-icons/bi";
-import * as IoIcons from "react-icons/io";
 import * as MdIcons from "react-icons/md";
-import * as ImIcons from "react-icons/im";
-
 import Profile from "../../assets/images/profile.png";
 import Posts from "../../components/PostTemplate";
 import API from "../../utils/API";
@@ -108,11 +103,19 @@ function AddPost() {
               </div>
               {user && user.email &&
 
-                <ListGroup variant="flush">
-                  <ListGroup.Item><b>Name : </b> {user.firstName + ' ' + user.lastName}</ListGroup.Item>
-                  <ListGroup.Item><b>Phone : </b> {user.phone}</ListGroup.Item>
-                  <ListGroup.Item><b>Email : </b> {user.email}</ListGroup.Item>
-                  <ListGroup.Item><b>Apartment : </b> {user.apt}</ListGroup.Item>
+                <ListGroup variant="flush container">
+                  <ListGroup.Item>
+                    <b>Name : </b> {user.firstName + ' ' + user.lastName}
+                  </ListGroup.Item>
+                  <ListGroup.Item>
+                    <b>Phone : </b> {user.phone}
+                  </ListGroup.Item>
+                  <ListGroup.Item>
+                    <b>Email : </b> {user.email}
+                  </ListGroup.Item>
+                  <ListGroup.Item>
+                    <b>Apartment : </b> {user.apt}
+                  </ListGroup.Item>
                 </ListGroup>
               }
             </Col>
@@ -120,28 +123,28 @@ function AddPost() {
               <Row className="jumbo-icon">
                 <Col xs="6" sm="3" md="3" lg="3">
                   <Link to="/children">
-                    <Jumbotron className="text-center">
+                    <Jumbotron className="text-center container">
                       <MdIcons.MdChildCare />
                     </Jumbotron>
                   </Link>
                 </Col>
                 <Col xs="6" sm="3" md="3" lg="3">
                   <Link to="/sport">
-                    <Jumbotron className="text-center">
+                    <Jumbotron className="text-center container">
                       <BiIcons.BiFootball />
                     </Jumbotron>
                   </Link>
                 </Col>
                 <Col xs="6" sm="3" md="3" lg="3">
                   <Link to="/pets">
-                    <Jumbotron className="text-center">
+                    <Jumbotron className="text-center container">
                       <MdIcons.MdPets />
                     </Jumbotron>
                   </Link>
                 </Col>
                 <Col xs="6" sm="3" md="3" lg="3">
                   <Link to="/events">
-                    <Jumbotron className="text-center">
+                    <Jumbotron className="text-center container">
                       <MdIcons.MdEventAvailable />
                     </Jumbotron>
                   </Link>

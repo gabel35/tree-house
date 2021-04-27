@@ -3,14 +3,18 @@ import { Card, Button, Row, Col } from "react-bootstrap";
 import { useHistory } from 'react-router'
 import { getPostData } from '../../src/utils/Posts'
 const PostTemplate = (props) => {
-  const { data: { img, alt, title, description, deployedUrl, repo, name, id, imageUrl }, handler, type } = props || {};
+  const { 
+    data: { img, alt, title, description, deployedUrl, repo, name, id, imageUrl }, 
+    handler, 
+    type 
+  } = props || {};
   const browserHistory = useHistory()
   const [getData, setData] = useState({})
-  function editAddHandler(id, type) {
-    console.log(props)
-    let url = `/edit-add/${id}?type=${type}`
-    browserHistory.push(url)
 
+  function editAddHandler(id, type) {
+    console.log(props);
+    let url = `/edit-add/${id}?type=${type}`;
+    browserHistory.push(url);
   }
   useEffect(() => {
     let data = getPostData('userTabel')
@@ -35,22 +39,30 @@ const PostTemplate = (props) => {
         {type &&
           <Row>
             <Col xs={6} sm={6} md={6}>
-              <Button variant="info" onClick={() => editAddHandler(id, type)}>Edit</Button>
+              <Button variant="light" onClick={() => editAddHandler(id, type)}>
+                Edit
+              </Button>
             </Col>
             <Col xs={6} sm={6} md={6} className="text-right">
-              <Button variant="danger" onClick={() => handler(id, type)}>Delete</Button>
+              <Button variant="light" onClick={() => handler(id, type)}>
+                Delete
+              </Button>
             </Col>
           </Row>
-        }
-        {!type &&
+        )}
+        {!type && (
           <Row>
             <Col xs={12} sm={12} md={12} className="text-center">
-              <Button variant="info" className="hoverbtb logoutbtn" href="mailto:gabrieljose3135@gmail.com">
+              <Button 
+                 variant="info" 
+                 className="hoverbtb logoutbtn msgbtn" 
+                 href="mailto:gabrieljose3135@gmail.com"
+               >
                   Message
               </Button>
             </Col>
           </Row>
-        }
+        )}
       </Card.Body>
     </Card>
   );
