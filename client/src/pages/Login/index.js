@@ -7,42 +7,39 @@ import Logo from "../../assets/images/logo.png";
 import API from "../../utils/API"
 
 function Login() {
-  const adminUser = {
-    email: "gabrieljose3135@gmail.com",
-    password: "admin123",
-  };
-  const [user, setUser] = useState({ email: "",  password: "" });
+  // const adminUser = {
+  //   email: "gabrieljose3135@gmail.com",
+  //   password: "admin123",
+  // };
+  // const [user, setUser] = useState({});
 
-  const [error, setError] = useState("");
+  // const Login = (details) => {
+  //   console.log(details);
 
-  const Login = (details) => {
-    console.log(details);
+  //   if (
+  //     //change this to user.email and user.password when database works//
+  //     details.email == user.email &&
+  //     details.password == user.password
+  //   ) {
+  //     console.log("Logged in");
+  //     setUser({
+  //       email: details.email,
+  //       password: details.password,
 
-    if (
-      //change this to user.email and user.password when database works//
-      details.email == adminUser.email &&
-      details.password == adminUser.password
-    ) {
-      console.log("Logged in");
-      setUser({
-        email: details.email,
-        password: details.password,
+  //     });
+  //   } else {
+  //     console.log("Details do not match!");
+  //   }
+  // };
 
-      });
-    } else {
-      console.log("Details do not match!");
-    }
-  };
-
-  //for when database actually works//
+  // for when database actually works//
   // useEffect(() => {
   //   loadUser()
   // }, [])
 
   // function loadUser () {
-  //   API.getUser()
+  //   API.login()
   //   .then(res => {
-  //     console.log(res)
   //     setUser(res)
   //   })
   //   .catch(err => console.log(err))
@@ -51,9 +48,9 @@ function Login() {
 
 // log out 
 
-  const Logout = () => {
-    setUser({ name: "", email: "" })
-  };
+  // const Logout = () => {
+  //   setUser({ name: "", email: "" })
+  // };
 
   return (
     <div className="Mdiv">
@@ -61,14 +58,14 @@ function Login() {
       <div className="bg bg2"></div>
       <div className="bg bg3"></div>
       <div className="App">
-        {user.email != "" ? (
+        {/* {user.email != "" ? (
           <div className="welcome">
             <h2>
               welcome, <span>{user.name}</span>
             </h2>
             <button onClick={Logout}>Log out</button>
           </div>
-        ) : (
+        ) : ( */}
           <>
             <div className="logo login">
               <Link to="/">
@@ -76,13 +73,14 @@ function Login() {
               </Link>
             </div>
             <div className="loginForm content_box">
-              <LoginForm Login={Login} error={error} />
+               <LoginForm />
+               {/*Login={Login} error={error} */}
               <div className="loginu text-center">
                 No account? <Link to="/signup"> Sign up now </Link>
               </div>
             </div>
           </>
-        )}
+        {/* )} */}
       </div>
     </div>
   );
