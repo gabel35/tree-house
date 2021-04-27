@@ -77,47 +77,18 @@ function EditAdd(props) {
           <DragImage image={adDetails.imageUrl} handler={ImageUploadCallback} />
         </Form.Group>
         <Form.Group>
-          <Form.Control
-            type="text"
-            name="title"
-            placeholder="Enter Ad Title"
-            value={adDetails.title}
-            onChange={(e) =>
-              setAdDetails({ ...adDetails, title: e.target.value })
-            }
-          />
+          <Form.Control type="text" name="title" placeholder="Enter Ad Title" value={adDetails.title} onChange={e => setAdDetails({ ...adDetails, title: e.target.value })} />
         </Form.Group>
-//         <Form.Group>
-//           <Form.Control
-//             type="text"
-//             name="name"
-//             placeholder="Enter Name"
-//             value={adDetails.name}
-//             onChange={(e) =>
-//               setAdDetails({ ...adDetails, name: e.target.value })
-//             }
-//           />
-//         </Form.Group>
+        {/* <Form.Group>
+          <Form.Control type="text" name="name" placeholder="Enter Name" value={adDetails.name} onChange={e => setAdDetails({ ...adDetails, name: e.target.value })} />
+        </Form.Group> */}
         <Form.Group>
-          <Form.Control
-            as="textarea"
-            rows={3}
-            name="desc"
-            placeholder="Enter Ad description"
-            value={adDetails.description}
-            onChange={(e) =>
-              setAdDetails({ ...adDetails, description: e.target.value })
-            }
-          />
+          <Form.Control as="textarea" rows={3} name="desc" placeholder="Enter Ad description" value={adDetails.description} onChange={e => setAdDetails({ ...adDetails, description: e.target.value })} />
         </Form.Group>
         <Form.Group>
           <div className="homepage-btn">
             <span>
-              <input
-                type="submit"
-                value="POST"
-                onClick={editFlag ? editAd : postAdSubmit}
-              />
+              <input type="submit" value="POST" onClick={editFlag ? editAd : postAdSubmit} />
             </span>
           </div>
         </Form.Group>
