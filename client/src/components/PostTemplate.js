@@ -30,7 +30,7 @@ const PostTemplate = (props) => {
               </Button>
             </Col>
             <Col xs={6} sm={6} md={6} className="text-right">
-              <Button variant="ligth" onClick={() => handler(id, type)}>
+              <Button variant="light" onClick={() => handler(id, type)}>
                 Delete
               </Button>
             </Col>
@@ -41,7 +41,7 @@ const PostTemplate = (props) => {
             <Col xs={12} sm={12} md={12} className="text-center">
               <Button
                 variant="info"
-                className="hoverbtb logoutbtn"
+                className="hoverbtb logoutbtn msgbtn"
                 href="mailto:abc@example.com"
               >
                 Message

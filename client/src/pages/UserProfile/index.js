@@ -94,7 +94,7 @@ function AddPost() {
               <div className="profileimg">
                 <img src={Profile} width="100%" alt="" />
               </div>
-              <ListGroup variant="flush">
+              <ListGroup variant="flush container">
                 <ListGroup.Item>
                   <b>Name : </b> Gabriel Sanchez {user.firstName} {user.lastName}
                 </ListGroup.Item>
@@ -113,28 +113,28 @@ function AddPost() {
               <Row className="jumbo-icon">
                 <Col xs="6" sm="3" md="3" lg="3">
                   <Link to="/children">
-                    <Jumbotron className="text-center">
+                    <Jumbotron className="text-center container">
                       <MdIcons.MdChildCare />
                     </Jumbotron>
                   </Link>
                 </Col>
                 <Col xs="6" sm="3" md="3" lg="3">
                   <Link to="/sport">
-                    <Jumbotron className="text-center">
+                    <Jumbotron className="text-center container">
                       <BiIcons.BiFootball />
                     </Jumbotron>
                   </Link>
                 </Col>
                 <Col xs="6" sm="3" md="3" lg="3">
                   <Link to="/pets">
-                    <Jumbotron className="text-center">
+                    <Jumbotron className="text-center container">
                       <MdIcons.MdPets />
                     </Jumbotron>
                   </Link>
                 </Col>
                 <Col xs="6" sm="3" md="3" lg="3">
                   <Link to="/events">
-                    <Jumbotron className="text-center">
+                    <Jumbotron className="text-center container">
                       <MdIcons.MdEventAvailable />
                     </Jumbotron>
                   </Link>
