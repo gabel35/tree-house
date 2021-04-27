@@ -24,7 +24,6 @@ function LoginForm() {
   function handleFormSubmit(event) {
     event.preventDefault();
     if (user.email && user.password) {
-      console.log("frontest-end user", user);
       // console.log("Account created")
       API.login(user).catch((err) => console.log(err));
     }

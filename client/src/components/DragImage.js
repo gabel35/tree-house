@@ -8,7 +8,7 @@ function DragImage(props) {
     const maxNumber = 1;
     const onChange = (imageList, addUpdateIndex) => {
         // data for submit
-        console.log(imageList, addUpdateIndex);
+        // console.log(imageList, addUpdateIndex);
         props.handler(imageList)
     };
 

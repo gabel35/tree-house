@@ -38,7 +38,7 @@ function AddPost() {
   function loadUser() {
     API.getUser({email: emailID})
       .then(res => {
-        console.log(res)
+        // console.log(res)
         setUser(res)
       })
       .catch((err) => console.log(err));

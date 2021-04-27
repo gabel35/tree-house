@@ -12,7 +12,7 @@ const PostTemplate = (props) => {
   const [getData, setData] = useState({})
 
   function editAddHandler(id, type) {
-    console.log(props);
+    // console.log(props);
     let url = `/edit-add/${id}?type=${type}`;
     browserHistory.push(url);
   }
