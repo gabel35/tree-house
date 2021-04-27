@@ -31,8 +31,14 @@ function AddPost() {
   const emailID = localStorage.getItem("email")
 
   useEffect(() => {
-    loadUser();
-  }, []);
+    loadUser()
+    // temp added
+    let data = getPostData('userTabel')
+    if (data) {
+      setUser(data[0])
+    }
+
+  }, [])
 
   function loadUser() {
     API.getUser({email: emailID})
@@ -67,7 +73,8 @@ function AddPost() {
     } else {
       setAdData(false);
     }
-  }, [petsData, childrenData, eventData, sportData]);
+  }, [petsData, childrenData, eventData, sportData])
+
 
   function deletehandler(id, type) {
     let filterAd = getPostData(type).filter((data) => data.id != id);
@@ -99,20 +106,15 @@ function AddPost() {
               <div className="profileimg">
                 <img src={Profile} width="100%" alt="" />
               </div>
-              <ListGroup variant="flush">
-                <ListGroup.Item>
-                  <b>Name : </b> Gabriel Sanchez {user.firstName} {user.lastName}
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <b>Phone : </b> 973 573 4431 {user.phone}
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <b>Email : </b> gabrieljose3135@gmail.com {user.email}
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <b>Apartment : </b> 1S {user.apt}
-                </ListGroup.Item>
-              </ListGroup>
+              {user && user.email &&
+
+                <ListGroup variant="flush">
+                  <ListGroup.Item><b>Name : </b> {user.firstName + ' ' + user.lastName}</ListGroup.Item>
+                  <ListGroup.Item><b>Phone : </b> {user.phone}</ListGroup.Item>
+                  <ListGroup.Item><b>Email : </b> {user.email}</ListGroup.Item>
+                  <ListGroup.Item><b>Apartment : </b> {user.apt}</ListGroup.Item>
+                </ListGroup>
+              }
             </Col>
             <Col xs="12" sm="8" md="8" lg="8">
               <Row className="jumbo-icon">
