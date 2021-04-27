@@ -32,8 +32,6 @@ const PostTemplate = (props) => {
         {getData && getData.firstName && getData.firstName &&
           <h5 className="postedby">posted by {getData.firstName + ' ' + getData.lastName}</h5>
         }
-
-
         {type &&
           <Row>
             <Col xs={6} sm={6} md={6}>
@@ -47,8 +45,8 @@ const PostTemplate = (props) => {
         {!type &&
           <Row>
             <Col xs={12} sm={12} md={12} className="text-center">
-              <Button variant="info" className="bgN hoverbtb" href="mailto:abc@example.com">
-                Message
+              <Button variant="info" className="hoverbtb logoutbtn" href="mailto:gabrieljose3135@gmail.com">
+                  Message
               </Button>
             </Col>
           </Row>

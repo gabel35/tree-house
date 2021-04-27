@@ -52,7 +52,6 @@ function DragImage(props) {
     //    });
     //    }
 
-
     return (
         <div className="App uplodimg">
             <ImageUploading

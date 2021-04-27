@@ -100,7 +100,7 @@ function EditAdd(props) {
         <Form.Group>
           <div className="homepage-btn">
             <span>
-              <input type="submit" value="SAVE" onClick={editFlag ? editAd : postAdSubmit} />
+              <input type="submit" value="POST" onClick={editFlag ? editAd : postAdSubmit} />
             </span>
           </div>
         </Form.Group>
